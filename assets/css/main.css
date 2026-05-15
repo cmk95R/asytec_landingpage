@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1565c0;
+  --color-primary-dark: #0d47a1;
+  --color-primary-light: #1976d2;
+  --color-accent: #2196f3;
+  --color-text: #1a1a2e;
+  --color-text-light: #546e7a;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-primary-700 font-heading mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-500 font-body;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold 
+         rounded-sm tracking-wider uppercase text-sm transition-all duration-300
+         hover:bg-primary-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 px-8 py-3 border-2 border-white text-white font-semibold 
+         rounded-sm tracking-wider uppercase text-sm transition-all duration-300
+         hover:bg-white hover:text-primary-700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5) !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+  background: white !important;
+  width: 30px !important;
+  border-radius: 4px !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Reveal animation classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay utilities */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Service card hover effect */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(21, 101, 192, 0.15);
+}
+
+/* Metric number */
+.metric-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }

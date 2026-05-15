@@ -1,0 +1,9 @@
+{
+  "pid": 16724,
+  "startedAt": 1778833833635,
+  "command": "dev",
+  "cwd": "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt",
+  "port": 3000,
+  "hostname": "::1",
+  "url": "http://[::1]:3000"
+}
