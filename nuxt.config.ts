@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    '@nuxt/image',
     (_options, nuxt) => {
       nuxt.hook('modules:done', () => {
         const postcssOptions =

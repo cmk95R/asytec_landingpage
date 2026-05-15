@@ -81,17 +81,17 @@ let swiperInstance = null
 
 const slides = [
   {
-    image: 'https://asytec.com/_next/static/media/carousel1.e3fa0991.png',
+    image: '/images/carousel1.e3fa0991.png',
     title: 'Impulsamos el futuro de tu empresa con tecnología innovadora',
     subtitle: 'Soluciones que transforman y llevan tu negocio al siguiente nivel.',
   },
   {
-    image: 'https://asytec.com/_next/static/media/carrousellhero.1e6771ad.png',
+    image: '/images/carrousellhero.1e6771ad.png',
     title: 'Especialistas en tecnología y consultoría desde 1993',
     subtitle: 'Liderando la innovación tecnológica con más de 30 años de experiencia.',
   },
   {
-    image: 'https://asytec.com/_next/static/media/carrousellhero3.8f7bcea9.png',
+    image: '/images/carrousellhero3.8f7bcea9.png',
     title: 'Llevamos soluciones tecnológicas a empresas líderes',
     subtitle: 'Descubrí cómo podemos ayudarte a transformar tu empresa.',
   },

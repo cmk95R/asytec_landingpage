@@ -27,9 +27,11 @@
             :class="['relative overflow-hidden', i % 2 !== 0 ? 'md:order-2' : '']"
             style="min-height: 300px"
           >
-            <img
+          <NuxtImg
               :src="service.image"
               :alt="service.title"
+            format="webp"
+            loading="lazy"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-transparent" />
@@ -87,7 +89,7 @@ onMounted(() => {
 const services = [
   {
     title: 'Consultoría y procesos',
-    image: 'https://asytec.com/_next/static/media/consultoria3.277d5b8f.jpg',
+      image: '/images/consultoria3.277d5b8f.jpg',
     items: [
       'Software ERP: Implementación, customización, soporte funcional/mesa de ayuda de JD Edwards, SAP, Oracle, IFS.',
       'Procesos de Negocio: relevamiento, análisis, documentación, diagnóstico, optimización y rediseño de procesos.',
@@ -97,7 +99,7 @@ const services = [
   },
   {
     title: 'Desarrollo de software',
-    image: 'https://asytec.com/_next/static/media/desarrollo3.93f477fa.jpg',
+      image: '/images/desarrollo3.93f477fa.jpg',
     items: [
       'Diseño de sitios institucionales.',
       'Construcción de aplicaciones a medida, web y mobile.',
@@ -107,7 +109,7 @@ const services = [
   },
   {
     title: 'Administración de plataformas',
-    image: 'https://asytec.com/_next/static/media/soporte.86983cf4.jpg',
+      image: '/images/soporte.86983cf4.jpg',
     items: [
       'Administración de redes y servidores (AS/400, Windows, Linux).',
       'Monitoreo de redes y mantenimiento preventivo y correctivo.',
@@ -117,7 +119,7 @@ const services = [
   },
   {
     title: 'Seguridad de la información',
-    image: 'https://asytec.com/_next/static/media/seguridad.cc1842ae.jpg',
+      image: '/images/seguridad.cc1842ae.jpg',
     items: [
       'Asistencia en la operación e implementación de seguridad perimetral en redes.',
       'Control de cumplimiento de normativas SOX, PCI.',
@@ -127,7 +129,7 @@ const services = [
   },
   {
     title: 'Gestión de proyectos y presupuestos de TI',
-    image: 'https://asytec.com/_next/static/media/gestion.04a56933.jpg',
+      image: '/images/gestion.04a56933.jpg',
     items: [
       'Enfoque integral para la planificación, administración y control de proyectos tecnológicos.',
       'Gestión de portafolios y proyectos de TI.',
@@ -137,7 +139,7 @@ const services = [
   },
   {
     title: 'Selección de talento',
-    image: 'https://asytec.com/_next/static/media/RRHH.bdec2acf.jpg',
+      image: '/images/RRHH.bdec2acf.jpg',
     items: [
       'Amplia experiencia en búsquedas de personal con entendimiento claro del perfil solicitado.',
       'Proceso con bases de datos y redes de contactos propias y de terceros.',

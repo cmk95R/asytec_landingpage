@@ -225,6 +225,7 @@ declare global {
   const useHydration: typeof import('../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/composables/hydrate').useHydration
   const useId: typeof import('vue').useId
   const useIdle: typeof import('@vueuse/core').useIdle
+  const useImage: typeof import('../../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/composables').useImage
   const useInfiniteScroll: typeof import('@vueuse/core').useInfiniteScroll
   const useIntersectionObserver: typeof import('@vueuse/core').useIntersectionObserver
   const useInterval: typeof import('@vueuse/core').useInterval
@@ -635,6 +636,7 @@ declare module 'vue' {
     readonly useHydration: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/composables/hydrate')['useHydration']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
+    readonly useImage: UnwrapRef<typeof import('../../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/composables')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
     readonly useIntersectionObserver: UnwrapRef<typeof import('@vueuse/core')['useIntersectionObserver']>
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>

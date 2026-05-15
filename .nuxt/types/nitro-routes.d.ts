@@ -12,6 +12,9 @@ declare module "nitropack/types" {
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }
+    '/_ipx/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/server/routes/_ipx').default>>>>
+    }
   }
 }
 export {}

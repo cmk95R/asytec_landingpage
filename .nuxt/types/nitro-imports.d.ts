@@ -121,6 +121,7 @@ declare global {
   const useAppConfig: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/config').useAppConfig
   const useBase: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').useBase
   const useEvent: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/context').useEvent
+  const useImage: typeof import('../../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/server/utils/image').useImage
   const useNitroApp: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/app').useNitroApp
   const useRuntimeConfig: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/config').useRuntimeConfig
   const useSession: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').useSession
@@ -147,3 +148,4 @@ export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
 export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
 export { defineAppConfig } from 'C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
+export { useImage } from 'C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/server/utils/image';

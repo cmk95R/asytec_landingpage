@@ -125,6 +125,8 @@
     "../node_modules/.pnpm/@nuxtjs+tailwindcss@6.14.0_magicast@0.5.3_yaml@2.9.0/node_modules/dist/runtime/server",
     "../node_modules/.pnpm/@vueuse+nuxt@11.3.0_magicas_158c5069d100c0de08ed1f8c5130fcc5/node_modules/runtime/server",
     "../node_modules/.pnpm/@vueuse+nuxt@11.3.0_magicas_158c5069d100c0de08ed1f8c5130fcc5/node_modules/dist/runtime/server",
+    "../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/runtime/server",
+    "../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/dist/runtime/server",
     "../node_modules/.pnpm/@nuxt+devtools@4.0.0-alpha._9658ad1ead990b411b4ed142729169a1/node_modules/runtime/server",
     "../node_modules/.pnpm/@nuxt+devtools@4.0.0-alpha._9658ad1ead990b411b4ed142729169a1/node_modules/dist/runtime/server",
     "../node_modules/.pnpm/@nuxt+telemetry@2.8.0_@nuxt+kit@3.21.5_magicast@0.5.3_/node_modules/runtime/server",
@@ -139,6 +141,7 @@
     "../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/node_modules",
     "../node_modules/.pnpm/@nuxtjs+tailwindcss@6.14.0_magicast@0.5.3_yaml@2.9.0/node_modules/@nuxtjs/tailwindcss/node_modules",
     "../node_modules/.pnpm/@vueuse+nuxt@11.3.0_magicas_158c5069d100c0de08ed1f8c5130fcc5/node_modules/@vueuse/nuxt/node_modules",
+    "../node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/node_modules",
     "../node_modules/.pnpm/@nuxt+devtools@4.0.0-alpha._9658ad1ead990b411b4ed142729169a1/node_modules/@nuxt/devtools/node_modules",
     "../node_modules/.pnpm/@nuxt+telemetry@2.8.0_@nuxt+kit@3.21.5_magicast@0.5.3_/node_modules/@nuxt/telemetry/node_modules",
     "../dist"

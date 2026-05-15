@@ -3,6 +3,7 @@
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
 /// <reference path="../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/index.d.mts" />
+/// <reference path="../image/providers.d.ts" />
 /// <reference path="nitro-middleware.d.ts" />
 /// <reference path="./schema.d.ts" />
 

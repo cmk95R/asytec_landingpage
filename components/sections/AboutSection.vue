@@ -49,22 +49,22 @@ const metrics = [
   {
     value: 500,
     label: 'Proyectos',
-    icon: 'https://asytec.com/_next/static/media/1.5128f91e.png',
+    icon: '/images/1.5128f91e.png',
   },
   {
     value: 150,
     label: 'Profesionales',
-    icon: 'https://asytec.com/_next/static/media/2.58c30918.png',
+    icon: '/images/2.58c30918.png',
   },
   {
     value: 200,
     label: 'Clientes',
-    icon: 'https://asytec.com/_next/static/media/12.ef88365d.png',
+    icon: '/images/12.ef88365d.png',
   },
   {
     value: 5,
     label: 'Países',
-    icon: 'https://asytec.com/_next/static/media/4.921542f6.png',
+    icon: '/images/4.921542f6.png',
   },
 ]
 </script>
