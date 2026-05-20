@@ -14,7 +14,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         <div class="reveal-left w-full" ref="mapRef">
-          <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white" style="height: 380px">
+          <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white" style="height: 480px">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6571.959824930099!2d-58.46502431135536!3d-34.55406398517658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb4299e1fb7db%3A0xa763d94ef8bf1de8!2sASYTEC%20Sistemas!5e0!3m2!1ses-419!2sus!4v1738857771284!5m2!1ses-419!2sus"
               width="100%"

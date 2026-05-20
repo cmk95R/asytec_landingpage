@@ -14,9 +14,9 @@
         href="https://www.linkedin.com/company/asytec/jobs/"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-3 px-10 py-4 bg-white text-primary-700 font-heading font-bold
-        text-sm tracking-wider uppercase rounded-sm transition-all duration-300
-        hover:shadow-2xl hover:-translate-y-1 hover:bg-blue-50"
+        class="inline-flex items-center gap-3 px-10 py-4 bg-[#3A5FBA] text-white font-heading font-bold
+        text-sm tracking-wider uppercase rounded-lg transition-all duration-300
+        hover:shadow-2xl hover:-translate-y-1 hover:bg-[#2b488f]"
       >
         VER BÚSQUEDAS
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
