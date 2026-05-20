@@ -3,28 +3,25 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <!-- Header -->
       <div class="text-center mb-16 reveal" ref="headerRef">
-        <p class="text-sm font-heading font-semibold tracking-widest uppercase text-primary-500 mb-2">Lo que hacemos</p>
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 rounded-full" />
       </div>
 
       <!-- Services -->
-      <div class="flex flex-col gap-0">
+      <div class="flex flex-col gap-12 md:gap-16">
         <div
           v-for="(service, i) in services"
           :key="service.title"
           :ref="el => serviceRefs[i] = el"
           :class="[
-            'service-card grid grid-cols-1 md:grid-cols-2 overflow-hidden',
+            'service-card grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-stretch',
             i % 2 === 0 ? 'reveal-left' : 'reveal-right',
-            i === 0 ? 'rounded-t-2xl' : '',
-            i === services.length - 1 ? 'rounded-b-2xl' : '',
           ]"
           :style="`transition-delay: ${i * 50}ms`"
         >
           <!-- Image -->
           <div
-            :class="['relative overflow-hidden', i % 2 !== 0 ? 'md:order-2' : '']"
+            :class="['relative overflow-hidden rounded-2xl shadow-md border border-gray-100', i % 2 !== 0 ? 'md:order-2' : '']"
             style="min-height: 300px"
           >
           <NuxtImg
@@ -40,7 +37,7 @@
           <!-- Content -->
           <div
             :class="[
-              'bg-white p-10 flex flex-col justify-center',
+              'bg-white p-8 lg:p-12 flex flex-col justify-center rounded-2xl shadow-md border border-gray-100',
               i % 2 !== 0 ? 'md:order-1' : '',
             ]"
           >

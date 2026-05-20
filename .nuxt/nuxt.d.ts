@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 /// <reference types="@vueuse/nuxt" />
 /// <reference types="@nuxt/image" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="@nuxtjs/tailwindcss" />
 /// <reference types="@nuxt/devtools" />
+=======
+/// <reference types="@nuxt/image" />
+/// <reference types="@vueuse/nuxt" />
+/// <reference types="@nuxtjs/tailwindcss" />
+/// <reference types="@nuxt/devtools" />
+/// <reference types="@nuxt/telemetry" />
+>>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 /// <reference path="types/nitro-layouts.d.ts" />
 /// <reference path="types/builder-env.d.ts" />
 /// <reference types="nuxt" />

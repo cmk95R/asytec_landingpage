@@ -44,11 +44,9 @@
                   :class="{ 'animate-fade-up': activeIndex === i }"
                   style="animation-delay: 0.6s; animation-fill-mode: forwards"
                 >
-                  <a href="/Brochure.pdf" target="_blank" class="btn-outline">
+                  <a href="/Brochure.pdf" target="_blank" class="btn-outline !rounded-lg">
                     VER BROCHURE
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                    </svg>
+                    
                   </a>
                 </div>
               </div>
@@ -61,20 +59,22 @@
       <div class="swiper-pagination !bottom-8" />
 
       <!-- Navigation arrows -->
-      <div class="swiper-button-prev !text-white !w-12 !h-12 !bg-white/20 !rounded-full backdrop-blur-sm hover:!bg-white/40 transition-all" />
-      <div class="swiper-button-next !text-white !w-12 !h-12 !bg-white/20 !rounded-full backdrop-blur-sm hover:!bg-white/40 transition-all" />
+      <div class="swiper-button-prev !text-white !w-8 !h-10 after:!text-lg  !rounded-full backdrop-blur-sm hover:!bg-white/40 transition-all" />
+      <div class="swiper-button-next !text-white !w-8 !h-10 after:!text-lg  !rounded-full backdrop-blur-sm hover:!bg-white/40 transition-all" />
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 right-8 z-20 flex flex-col items-center gap-2 opacity-70">
-      <span class="text-white text-xs font-heading tracking-widest uppercase rotate-90 origin-center translate-x-6">Scroll</span>
-      <div class="w-px h-12 bg-white/50 animate-pulse" />
-    </div>
+   
   </section>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import Swiper from 'swiper'
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 const activeIndex = ref(0)
 let swiperInstance = null
@@ -97,19 +97,12 @@ const slides = [
   },
 ]
 
-onMounted(async () => {
-  const { Swiper, Navigation, Pagination, Autoplay, EffectFade } = await import('swiper')
-  await import('swiper/css')
-  await import('swiper/css/navigation')
-  await import('swiper/css/pagination')
-  await import('swiper/css/effect-fade')
-
-  Swiper.use([Navigation, Pagination, Autoplay, EffectFade])
-
+onMounted(() => {
   swiperInstance = new Swiper('.hero-swiper', {
+    modules: [Navigation, Pagination, Autoplay, EffectFade],
     effect: 'fade',
     loop: true,
-    autoplay: { delay: 5000, disableOnInteraction: false },
+    autoplay: { delay: 3000, disableOnInteraction: false },
     speed: 1200,
     pagination: { el: '.swiper-pagination', clickable: true },
     navigation: {

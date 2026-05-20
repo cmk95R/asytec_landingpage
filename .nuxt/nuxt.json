@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "_hash": "VGKA4RpKcLnxfa9RePIb365UolWTqGze-XhIys-iztc",
   "project": {
     "rootDir": "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt"
+=======
+  "_hash": "DnfPUu1mWpZQ9mPRDx4BhHL7QGjV--_c8wLfXYXg4Q0",
+  "project": {
+    "rootDir": "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master"
+>>>>>>> f5fe1f9 (fix: Correcion en el diseño)
   },
   "versions": {
     "nuxt": "3.21.5"

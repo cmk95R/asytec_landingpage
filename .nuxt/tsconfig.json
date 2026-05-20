@@ -113,7 +113,11 @@
         "./imports"
       ],
       "#app-manifest": [
+<<<<<<< HEAD
         "./manifest/meta/dev"
+=======
+        "./manifest/meta/dev.json"
+>>>>>>> f5fe1f9 (fix: Correcion en el diseño)
       ],
       "#components": [
         "./components"

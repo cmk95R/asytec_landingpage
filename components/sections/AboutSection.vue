@@ -3,7 +3,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <!-- Header -->
       <div class="text-center mb-16 reveal" ref="headerRef">
-        <p class="text-sm font-heading font-semibold tracking-widest uppercase text-primary-500 mb-2">Conócenos</p>
         <h2 class="section-title">¿Quiénes somos?</h2>
         <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 mb-6 rounded-full" />
         <p class="section-subtitle max-w-2xl mx-auto">
@@ -17,6 +16,7 @@
         <MetricCounter
           v-for="(metric, i) in metrics"
           :key="metric.label"
+          class="scale-90 origin-top transition-transform"
           :value="metric.value"
           :label="metric.label"
           :icon="metric.icon"
@@ -25,13 +25,7 @@
       </div>
 
       <!-- Decorative separator -->
-      <div class="mt-20 flex items-center gap-4">
-        <div class="flex-1 h-px bg-gray-200" />
-        <div class="w-2 h-2 rounded-full bg-primary-400" />
-        <div class="w-3 h-3 rounded-full bg-primary-500" />
-        <div class="w-2 h-2 rounded-full bg-primary-400" />
-        <div class="flex-1 h-px bg-gray-200" />
-      </div>
+      
     </div>
   </section>
 </template>

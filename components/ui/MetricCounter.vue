@@ -1,7 +1,7 @@
 <template>
   <div ref="el" class="flex flex-col items-center text-center reveal" :style="`transition-delay: ${delay}ms`">
     <NuxtImg :src="icon" :alt="label" class="w-14 h-14 mb-3 object-contain" format="webp" loading="lazy" />
-    <div class="metric-number">{{ displayValue }}+</div>
+    <div class="metric-number !text-3xl">{{ displayValue }}+</div>
     <div class="text-gray-500 font-body font-medium mt-1">{{ label }}</div>
   </div>
 </template>
