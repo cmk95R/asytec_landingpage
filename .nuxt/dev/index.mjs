@@ -3,47 +3,6 @@ import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
-<<<<<<< HEAD
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs';
-import { escapeHtml } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@vue+shared@3.5.34/node_modules/@vue/shared/dist/shared.cjs.js';
-import viteNodeEntry_mjs from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
-import { viteNodeFetch } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
-import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/vue-bundle-renderer@2.2.0/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, encodePath, joinRelativeURL } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ufo@1.6.4/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/vue@3.5.34_typescript@5.9.3/node_modules/vue/server-renderer/index.mjs';
-import { klona } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/klona@2.0.6/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/defu@6.1.7/node_modules/defu/dist/defu.mjs';
-import destr, { destr as destr$1 } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/destr@2.0.5/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
-import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unhead@2.1.15/node_modules/unhead/dist/server.mjs';
-import { stringify, uneval } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/devalue@5.8.0/node_modules/devalue/index.js';
-import { isVNode, isRef, toValue } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/vue@3.5.34_typescript@5.9.3/node_modules/vue/index.mjs';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unhead@2.1.15/node_modules/unhead/dist/plugins.mjs';
-import { createHooks } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ofetch@1.5.1/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/node-mock-http@1.0.4/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unstorage@1.17.5_db0@0.3.4_ioredis@5.10.1/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unstorage@1.17.5_db0@0.3.4_ioredis@5.10.1/node_modules/unstorage/drivers/fs.mjs';
-import file_58_47_47_47C_58_47Users_47cfvhc_47OneDrive_47Desktop_47asytec_45nuxt_47asytec_45nuxt_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_808c40da5ebcfb49ebceaf8931e28aeb_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js';
-import { digest } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
-import { readFile } from 'node:fs/promises';
-import consola, { consola as consola$1 } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/consola@3.4.2/node_modules/consola/dist/index.mjs';
-import { ErrorParser } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/youch-core@0.3.3/node_modules/youch-core/build/index.js';
-import { Youch } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/youch@4.1.1/node_modules/youch/build/index.js';
-import { SourceMapConsumer } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/source-map@0.7.6/node_modules/source-map/source-map.js';
-import { AsyncLocalStorage } from 'node:async_hooks';
-import { getContext } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unctx@2.5.0/node_modules/unctx/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
-import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
-import { promises } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1, isAbsolute } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
-import { walkResolver } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unhead@2.1.15/node_modules/unhead/dist/utils.mjs';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ipx@3.1.1_db0@0.3.4_ioredis@5.10.1_srvx@0.11.15/node_modules/ipx/dist/index.mjs';
-
-const serverAssets = [{"baseName":"server","dir":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/server/assets"}];
-=======
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs';
 import { escapeHtml } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@vue+shared@3.5.34/node_modules/@vue/shared/dist/shared.cjs.js';
 import viteNodeEntry_mjs from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
@@ -83,7 +42,6 @@ import { walkResolver } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asy
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ipx@3.1.1_db0@0.3.4_ioredis@5.10.1_srvx@0.11.15/node_modules/ipx/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/server/assets"}];
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 
 const assets$1 = createStorage();
 
@@ -95,21 +53,12 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-<<<<<<< HEAD
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt","watchOptions":{"ignored":[null]}}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/server","watchOptions":{"ignored":[null]}}));
-storage.mount('cache:nuxt:payload', file_58_47_47_47C_58_47Users_47cfvhc_47OneDrive_47Desktop_47asytec_45nuxt_47asytec_45nuxt_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_808c40da5ebcfb49ebceaf8931e28aeb_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"file:///C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/.nuxt/cache/nuxt/payload"}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/.nuxt"}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/.nuxt/cache"}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/.data/kv"}));
-=======
 storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master","watchOptions":{"ignored":[null]}}));
 storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/server","watchOptions":{"ignored":[null]}}));
 storage.mount('cache:nuxt:payload', file_58_47_47_47C_58_47Users_47CMK_45DEV_47Desktop_472025_3720_45_3720DEV_47asytec_landingpage_45master_47asytec_landingpage_45master_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_808c40da5ebcfb49ebceaf8931e28aeb_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"file:///C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt/cache/nuxt/payload"}));
 storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt"}));
 storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt/cache"}));
 storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.data/kv"}));
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -710,11 +659,7 @@ const _inlineRuntimeConfig = {
     "alias": {},
     "fs": {
       "dir": [
-<<<<<<< HEAD
-        "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/public"
-=======
         "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/public"
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
       ]
     },
     "http": {
@@ -2115,21 +2060,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-<<<<<<< HEAD
-const _F_dQVl_Cx2HouYnd14hIGJDa9xOYCFm08DM296ziqHo = (function(nitro) {
-=======
 const _6sXev4BSwpTCeMgXoqi2ytt7fDRvKVOnOEdZPSihrxY = (function(nitro) {
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-<<<<<<< HEAD
-const rootDir = "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt";
-=======
 const rootDir = "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master";
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 
 const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"Expertos en tecnología y consultoría, liderando el camino desde 1993. Más de 30 años impulsando la innovación tecnológica."}],"link":[{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"}],"style":[],"script":[],"noscript":[],"title":"ASYTEC Sistemas"};
 
@@ -2155,11 +2092,7 @@ const asyncContext = getContext("nuxt-dev", {
 	asyncContext: true,
 	AsyncLocalStorage
 });
-<<<<<<< HEAD
-const _GARSSx6TjZwwNvIgbs6LOQgWg7utMOZEdDuIHHdAg = (nitroApp) => {
-=======
 const _yE2J0e7LRgqA1xqcjo287xVhoDHHo5guVfpWEJ7Ol6w = (nitroApp) => {
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 	const handler = nitroApp.h3App.handler;
 	nitroApp.h3App.handler = (event) => {
 		return asyncContext.callAsync({
@@ -2235,13 +2168,8 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-<<<<<<< HEAD
-  _F_dQVl_Cx2HouYnd14hIGJDa9xOYCFm08DM296ziqHo,
-_GARSSx6TjZwwNvIgbs6LOQgWg7utMOZEdDuIHHdAg,
-=======
   _6sXev4BSwpTCeMgXoqi2ytt7fDRvKVOnOEdZPSihrxY,
 _yE2J0e7LRgqA1xqcjo287xVhoDHHo5guVfpWEJ7Ol6w,
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
@@ -2270,11 +2198,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-<<<<<<< HEAD
-const _yToXDP = eventHandler((event) => {
-=======
 const _3zxMev = eventHandler((event) => {
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -2795,11 +2719,7 @@ async function runTask(name, {
   }
 }
 
-<<<<<<< HEAD
-const _pgJbkZ = lazyEventHandler(() => {
-=======
 const _JXKAnM = lazyEventHandler(() => {
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -2817,18 +2737,6 @@ const _JXKAnM = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-<<<<<<< HEAD
-const _lazy_KEeaKQ = () => Promise.resolve().then(function () { return contact_post$1; });
-const _lazy_5_PZk2 = () => Promise.resolve().then(function () { return renderer; });
-
-const handlers = [
-  { route: '', handler: _yToXDP, lazy: false, middleware: true, method: undefined },
-  { route: '/api/contact', handler: _lazy_KEeaKQ, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_5_PZk2, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _pgJbkZ, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_5_PZk2, lazy: true, middleware: false, method: undefined }
-=======
 const _lazy_2mS7Hi = () => Promise.resolve().then(function () { return contact_post$1; });
 const _lazy_8hn3AD = () => Promise.resolve().then(function () { return renderer; });
 
@@ -2839,7 +2747,6 @@ const handlers = [
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _JXKAnM, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_8hn3AD, lazy: true, middleware: false, method: undefined }
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
 ];
 
 function createNitroApp() {

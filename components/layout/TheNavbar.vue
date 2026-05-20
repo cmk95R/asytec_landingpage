@@ -35,11 +35,7 @@
           href="#contact"
           @click.prevent="scrollTo('contact')"
           :class="[
-<<<<<<< HEAD
-            'px-6 py-2 font-heading font-semibold text-sm tracking-wider uppercase transition-all duration-300 rounded-sm',
-=======
             'px-6 py-2 font-heading font-semibold text-sm tracking-wider uppercase transition-all duration-300 rounded-lg',
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
             scrolled
               ? 'bg-primary-600 text-white hover:bg-primary-700'
               : 'border-2 border-white text-white hover:bg-white hover:text-primary-700'
@@ -80,11 +76,7 @@
           <a
             href="#contact"
             @click.prevent="scrollTo('contact'); mobileOpen = false"
-<<<<<<< HEAD
-            class="btn-primary mt-2 justify-center"
-=======
             class="btn-primary mt-2 justify-center rounded-lg"
->>>>>>> f5fe1f9 (fix: Correcion en el diseño)
           >
             CONTACTO
           </a>
