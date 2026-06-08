@@ -46,6 +46,10 @@
             </svg>
           </a>
 
+          <a href="https://colaboradores.asytec.ar/" class="hover:opacity-80 transition-opacity duration-200" aria-label="ASYTEC">
+            <img src="/images/logoblanco.png" alt="ASYTEC" class="w-[28px] h-[28px] object-contain" style="filter: brightness(0) saturate(100%);" />
+          </a>
+
         </div>
       </div>
 

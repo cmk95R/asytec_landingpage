@@ -35,14 +35,14 @@
       <!-- Carrusel de publicaciones -->
       <div ref="gridRef" class="reveal">
         <Transition name="fade" mode="out-in">
-          <div :key="activeTab" class="relative">
+          <div :key="activeTab" class="relative px-10 md:px-14">
             <Swiper
               :modules="[Navigation, Pagination, Autoplay]"
               :slides-per-view="1.2"
               :space-between="16"
               :loop="filteredPosts.length > 4"
               :autoplay="{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }"
-              :navigation="true"
+              :navigation="{ prevEl: '.social-prev', nextEl: '.social-next' }"
               :pagination="{ clickable: true, dynamicBullets: true }"
               :breakpoints="{
                 640:  { slidesPerView: 2.2, spaceBetween: 20 },
@@ -101,6 +101,14 @@
                 </button>
               </SwiperSlide>
             </Swiper>
+
+            <!-- Botones de navegación personalizados -->
+            <button class="social-prev absolute left-0 md:left-2 top-[40%] -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-primary-700 hover:scale-105 transition-transform focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="social-next absolute right-0 md:right-2 top-[40%] -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-primary-700 hover:scale-105 transition-transform focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
           </div>
         </Transition>
       </div>
@@ -389,21 +397,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 }
 
 .social-swiper {
-  --swiper-navigation-color: #1565c0;
   --swiper-pagination-color: #1565c0;
 }
-.social-swiper .swiper-button-next,
-.social-swiper .swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 9999px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.social-swiper .swiper-button-next::after,
-.social-swiper .swiper-button-prev::after {
-  font-size: 16px;
-  font-weight: 800;
+.social-prev.swiper-button-disabled,
+.social-next.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(-50%) scale(1) !important;
 }
 .social-swiper .swiper-pagination-bullet {
   background: #cbd5e1;
