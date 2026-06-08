@@ -22,6 +22,7 @@ export const ContactSection: typeof import("../components/sections/ContactSectio
 export const HeroCarousel: typeof import("../components/sections/HeroCarousel.vue")['default']
 export const JobsSection: typeof import("../components/sections/JobsSection.vue")['default']
 export const ServicesSection: typeof import("../components/sections/ServicesSection.vue")['default']
+export const SocialFeed: typeof import("../components/sections/SocialFeed.vue")['default']
 export const MetricCounter: typeof import("../components/ui/MetricCounter.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -54,6 +55,7 @@ export const LazyContactSection: LazyComponent<typeof import("../components/sect
 export const LazyHeroCarousel: LazyComponent<typeof import("../components/sections/HeroCarousel.vue")['default']>
 export const LazyJobsSection: LazyComponent<typeof import("../components/sections/JobsSection.vue")['default']>
 export const LazyServicesSection: LazyComponent<typeof import("../components/sections/ServicesSection.vue")['default']>
+export const LazySocialFeed: LazyComponent<typeof import("../components/sections/SocialFeed.vue")['default']>
 export const LazyMetricCounter: LazyComponent<typeof import("../components/ui/MetricCounter.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-layout")['default']>

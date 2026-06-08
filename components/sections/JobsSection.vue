@@ -4,14 +4,14 @@
     
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal" ref="el">
-      <h2 class="font-heading font-extrabold text-4xl md:text-5xl text-gray-900 mb-6">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-gray-900 mb-6">
         ¿Te gustaría formar parte<br class="hidden md:block"/>de nuestro equipo?
       </h2>
       <p class="text-gray-700 text-lg mb-10 max-w-xl mx-auto">
         En ASYTEC siempre estamos en búsqueda de nuevos talentos. Encontrá la oportunidad ideal para vos.
       </p>
       <a
-        href="https://www.linkedin.com/company/asytec/jobs/"
+        href="https://rrhh.asytec.ar/"
         target="_blank"
         rel="noopener"
         class="inline-flex items-center gap-3 px-10 py-4 bg-[#3A5FBA] text-white font-heading font-bold

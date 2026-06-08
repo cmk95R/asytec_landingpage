@@ -96,6 +96,7 @@ const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'Quiénes Somos' },
   { id: 'services', label: 'Servicios' },
+  { id: 'social', label: 'Novedades' },
 ]
 
 const handleScroll = () => {

@@ -22,6 +22,7 @@ interface _GlobalComponents {
   HeroCarousel: typeof import("../../components/sections/HeroCarousel.vue")['default']
   JobsSection: typeof import("../../components/sections/JobsSection.vue")['default']
   ServicesSection: typeof import("../../components/sections/ServicesSection.vue")['default']
+  SocialFeed: typeof import("../../components/sections/SocialFeed.vue")['default']
   MetricCounter: typeof import("../../components/ui/MetricCounter.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -54,6 +55,7 @@ interface _GlobalComponents {
   LazyHeroCarousel: LazyComponent<typeof import("../../components/sections/HeroCarousel.vue")['default']>
   LazyJobsSection: LazyComponent<typeof import("../../components/sections/JobsSection.vue")['default']>
   LazyServicesSection: LazyComponent<typeof import("../../components/sections/ServicesSection.vue")['default']>
+  LazySocialFeed: LazyComponent<typeof import("../../components/sections/SocialFeed.vue")['default']>
   LazyMetricCounter: LazyComponent<typeof import("../../components/ui/MetricCounter.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-layout")['default']>

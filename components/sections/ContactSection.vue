@@ -1,12 +1,19 @@
 
 <template>
-  <section id="contact" class="relative py-16 flex items-center overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('/images/fondo%20contacto.png');">
-    
+  <section id="contact" class="relative py-20 flex items-center overflow-hidden bg-fixed"
+    style="background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 20%, #173487 95%, #173487 20%);">
+    <!-- Capa decorativa sutil -->
+    <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div class="absolute inset-0 opacity-30"
+        style="background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.25) 0%, transparent 45%);" />
+    </div>
+
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-      
+
       <div class="text-center mb-16 reveal" ref="headerRef">
-        <h2 class="text-4xl font-bold text-gray-900 mb-3">Contacto</h2>
-        <p class="text-gray-600 max-w-md mx-auto text-sm md:text-base">
+        
+        <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-gray-900 mb-3">Contacto</h2>
+        <p class="text-gray-700 max-w-md mx-auto text-sm md:text-base">
           Contactanos para más información sobre nuestros servicios.
         </p>
       </div>

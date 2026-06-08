@@ -6,6 +6,7 @@
       <ClientLogos />
       <AboutSection />
       <ServicesSection />
+      <SocialFeed />
       <JobsSection />
       <ContactSection />
     </main>
