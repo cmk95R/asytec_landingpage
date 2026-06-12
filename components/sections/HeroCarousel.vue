@@ -44,9 +44,13 @@
                   :class="{ 'animate-fade-up': activeIndex === i }"
                   style="animation-delay: 0.6s; animation-fill-mode: forwards"
                 >
-                  <a href="/Brochure.pdf" target="_blank" class="btn-outline !rounded-lg">
+                  <a
+                    href="/Brochure.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline !rounded-lg"
+                  >
                     VER BROCHURE
-                    
                   </a>
                 </div>
               </div>
