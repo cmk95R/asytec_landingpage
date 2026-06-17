@@ -51,9 +51,43 @@
               class="social-swiper !pb-14"
             >
               <SwiperSlide v-for="(post, i) in filteredPosts" :key="`${activeTab}-${i}`">
-                <button
+                <div
+                  v-if="post.embed"
                   @click="openLightbox(i)"
-                  class="group relative aspect-square w-full overflow-hidden rounded-2xl bg-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 reveal-item"
+                  class="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500 reveal-item cursor-pointer"
+                  :style="`transition-delay: ${(i % 4) * 60}ms`"
+                >
+                  <NuxtImg
+                    v-if="post.image"
+                    :src="post.image"
+                    :alt="`Publicación de ${post.network}`"
+                    format="webp"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    v-if="post.image"
+                    class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                  <div
+                    v-else
+                    v-html="post.embedHtml"
+                    :class="post.embedType === 'linkedin' ? 'linkedin-embed-wrap' : 'instagram-embed-wrap'"
+                    class="w-full h-full pointer-events-none"
+                  />
+                  <div class="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/30 transition-colors duration-500 flex items-center justify-center pointer-events-none">
+                    <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white text-xs font-semibold bg-black/70 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                      </svg>
+                      Ver publicación
+                    </span>
+                  </div>
+                </div>
+                <button
+                  v-else
+                  @click="openLightbox(i)"
+                  class="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 reveal-item"
                   :style="`transition-delay: ${(i % 4) * 60}ms`"
                 >
                   <NuxtImg
@@ -181,9 +215,18 @@
           <div
             v-if="currentPost"
             @click.stop
-            class="relative max-w-5xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+            class="relative max-w-5xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+            :class="currentPost.embed
+              ? (currentPost.embedType === 'linkedin' ? 'max-w-[504px]' : 'max-w-[540px]')
+              : 'flex flex-col md:flex-row'"
           >
-            <div class="md:w-2/3 bg-black flex items-center justify-center" style="min-height: 300px">
+            <div
+              v-if="currentPost.embed"
+              :class="currentPost.embedType === 'linkedin' ? 'linkedin-embed-lightbox' : 'instagram-embed-lightbox'"
+              class="w-full max-h-[90vh] overflow-y-auto"
+              v-html="currentPost.embedHtml"
+            />
+            <div v-else class="md:w-2/3 bg-black flex items-center justify-center" style="min-height: 300px">
               <NuxtImg
                 :src="currentPost.image"
                 :alt="currentPost.caption"
@@ -191,7 +234,7 @@
                 class="w-full h-full max-h-[90vh] object-contain"
               />
             </div>
-            <div class="md:w-1/3 p-6 md:p-8 flex flex-col">
+            <div v-if="!currentPost.embed" class="md:w-1/3 p-6 md:p-8 flex flex-col">
               <div class="flex items-center gap-3 pb-4 border-b border-gray-100">
                 <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold">
                   A
@@ -236,7 +279,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
@@ -267,6 +310,11 @@ useIntersectionObserver(ctaRef, ([{ isIntersecting }]) => {
 const igIcon = '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>'
 const inIcon = '<svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>'
 
+const buildIgEmbed = (permalink) => {
+  const safe = permalink.replace(/&/g, '&amp;')
+  return `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="${safe}" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="${safe}" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="${safe}" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida por ASYTEC Sistemas SRL (@asytecsistemas)</a></p></div></blockquote>`
+}
+
 const tabs = [
   { id: 'all', label: 'Todas', icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>' },
   { id: 'instagram', label: 'Instagram', icon: igIcon },
@@ -275,68 +323,64 @@ const tabs = [
 
 const posts = [
   {
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=800&fit=crop',
-    caption: '🚀 Nuevo proyecto implementado con éxito junto a nuestro cliente. Más de 30 años acompañando la transformación digital de las empresas.',
-    network: 'linkedin',
-    likes: '142',
-    comments: '18',
-    url: 'https://www.linkedin.com/company/asytec/',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=800&fit=crop',
-    caption: '💡 En ASYTEC creemos que la tecnología es una herramienta para impulsar el crecimiento. Conocé nuestros servicios de consultoría.',
+    embed: true,
+    embedType: 'instagram',
+    embedHtml: buildIgEmbed('https://www.instagram.com/reel/DYp7Nt4hsuG/?utm_source=ig_embed&utm_campaign=loading'),
     network: 'instagram',
-    likes: '89',
-    comments: '12',
-    url: 'https://www.instagram.com/asytecsistemas/',
+    url: 'https://www.instagram.com/reel/DYp7Nt4hsuG/',
   },
   {
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=800&fit=crop',
-    caption: '👥 ¡Sumate a nuestro equipo! Estamos en búsqueda de nuevos talentos para seguir creciendo juntos.',
-    network: 'linkedin',
-    likes: '256',
-    comments: '34',
-    url: 'https://www.linkedin.com/company/asytec/jobs/',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=800&fit=crop',
-    caption: '🔐 La seguridad informática ya no es opcional. Implementamos soluciones robustas para proteger tu negocio.',
+    embed: true,
+    embedType: 'instagram',
+    embedHtml: buildIgEmbed('https://www.instagram.com/p/DWT44WSDt7H/?utm_source=ig_embed&utm_campaign=loading'),
     network: 'instagram',
-    likes: '67',
-    comments: '8',
-    url: 'https://www.instagram.com/asytecsistemas/',
+    url: 'https://www.instagram.com/p/DWT44WSDt7H/',
   },
   {
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop',
-    caption: '📊 Caso de éxito: optimizamos los procesos de gestión de una empresa líder del mercado con JD Edwards.',
-    network: 'linkedin',
-    likes: '198',
-    comments: '24',
-    url: 'https://www.linkedin.com/company/asytec/',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=800&fit=crop',
-    caption: '🤝 Acompañamos a nuestros clientes en cada etapa de su transformación digital. Conocé más.',
+    embed: true,
+    embedType: 'instagram',
+    embedHtml: buildIgEmbed('https://www.instagram.com/p/DWB5mUNDgBZ/?utm_source=ig_embed&utm_campaign=loading'),
     network: 'instagram',
-    likes: '124',
-    comments: '15',
-    url: 'https://www.instagram.com/asytecsistemas/',
+    url: 'https://www.instagram.com/p/DWB5mUNDgBZ/',
   },
   {
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=800&fit=crop',
-    caption: '💼 Nuestra experiencia en gestión de proyectos de TI nos permite entregar resultados medibles y concretos.',
-    network: 'linkedin',
-    likes: '176',
-    comments: '21',
-    url: 'https://www.linkedin.com/company/asytec/',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=800&fit=crop',
-    caption: '⚡ Desarrollo a medida: aplicaciones web y mobile que se adaptan a las necesidades de tu negocio.',
+    embed: true,
+    embedType: 'instagram',
+    embedHtml: buildIgEmbed('https://www.instagram.com/p/DYp4oWggc4r/?utm_source=ig_embed&utm_campaign=loading'),
     network: 'instagram',
-    likes: '93',
-    comments: '11',
-    url: 'https://www.instagram.com/asytecsistemas/',
+    url: 'https://www.instagram.com/p/DYp4oWggc4r/',
+  },
+  {
+    embed: true,
+    embedType: 'linkedin',
+    embedHtml: '<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7465145496043651074?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>',
+    image: '/images/social/lk1.jpg',
+    network: 'linkedin',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7465145496043651074',
+  },
+  {
+    embed: true,
+    embedType: 'linkedin',
+    embedHtml: '<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7470209183317946369?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>',
+    image: '/images/social/lk2.jpg',
+    network: 'linkedin',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7470209183317946369',
+  },
+  {
+    embed: true,
+    embedType: 'linkedin',
+    embedHtml: '<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7437526879475171328?collapsed=1" height="523" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>',
+    image: '/images/social/lk3.jpg',
+    network: 'linkedin',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7437526879475171328',
+  },
+  {
+    embed: true,
+    embedType: 'linkedin',
+    embedHtml: '<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7447666868321931264?collapsed=1" height="567" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>',
+    image: '/images/social/lk4.jpg',
+    network: 'linkedin',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7447666868321931264',
   },
 ]
 
@@ -368,11 +412,72 @@ const onKey = (e) => {
   if (e.key === 'ArrowLeft') prev()
 }
 
-onMounted(() => window.addEventListener('keydown', onKey))
+const processInstagramEmbeds = () => {
+  if (typeof window === 'undefined') return
+  if (window.instgrm?.Embeds?.process) {
+    window.instgrm.Embeds.process()
+    return
+  }
+  if (document.querySelector('script[data-instgrm-loader]')) return
+  const script = document.createElement('script')
+  script.src = '//www.instagram.com/embed.js'
+  script.async = true
+  script.setAttribute('data-instgrm-loader', '')
+  document.body.appendChild(script)
+}
+
+watch(activeTab, async () => {
+  await nextTick()
+  processInstagramEmbeds()
+})
+
+watch(lightboxIndex, async () => {
+  await nextTick()
+  processInstagramEmbeds()
+})
+
+onMounted(() => {
+  window.addEventListener('keydown', onKey)
+  processInstagramEmbeds()
+})
 onUnmounted(() => window.removeEventListener('keydown', onKey))
 </script>
 
 <style scoped>
+.instagram-embed-wrap :deep(.instagram-media),
+.instagram-embed-lightbox :deep(.instagram-media) {
+  margin: 0 !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Hide profile header only in the slide preview (not in lightbox) */
+.instagram-embed-wrap :deep(.instagram-media) > div > a > div:first-child,
+.instagram-embed-wrap :deep(.instagram-media) > div > div:first-child,
+.instagram-embed-wrap :deep(.instagram-media) > header {
+  display: none !important;
+}
+.instagram-embed-wrap :deep(.instagram-media) > div:first-child {
+  padding-top: 0 !important;
+}
+
+.linkedin-embed-wrap iframe {
+  width: 100% !important;
+  border: none !important;
+  display: block;
+}
+.linkedin-embed-lightbox iframe {
+  width: 100% !important;
+  max-width: 504px;
+  height: 670px;
+  border: none !important;
+  display: block;
+  margin: 0 auto;
+}
+
 .reveal-item {
   opacity: 0;
   transform: translateY(20px);

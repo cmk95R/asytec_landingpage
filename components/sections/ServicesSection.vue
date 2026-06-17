@@ -9,10 +9,7 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <!-- Header -->
       <div class="text-center mb-20 reveal" ref="headerRef">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 text-xs font-semibold tracking-wider uppercase mb-4 border border-primary-100 reveal-badge">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-          Lo que hacemos
-        </span>
+        
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 rounded-full reveal-bar" />
         <p class="section-subtitle max-w-2xl mx-auto mt-5 reveal-sub">
@@ -93,13 +90,7 @@
               </li>
             </ul>
 
-            <!-- Footer con link sutil -->
-            <div class="mt-6 pt-5 border-t border-gray-100 flex items-center gap-2 text-primary-600 font-semibold text-xs uppercase tracking-wider opacity-0 -translate-x-2 group-hover/card:opacity-100 group-hover/card:translate-x-0 transition-all duration-500">
-              Conocé más
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover/card:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </div>
+           
           </div>
         </div>
       </div>
