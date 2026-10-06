@@ -5,8 +5,8 @@ import nodeCrypto from 'node:crypto';
 import { parentPort, threadId } from 'node:worker_threads';
 import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, removeResponseHeader, getQuery as getQuery$1, readBody, getResponseStatus, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs';
 import { escapeHtml } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@vue+shared@3.5.34/node_modules/@vue/shared/dist/shared.cjs.js';
-import viteNodeEntry_mjs from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
-import { viteNodeFetch } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
+import viteNodeEntry_mjs from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_6936efb4fc4a1d83653cd6e23a623282/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs';
+import { viteNodeFetch } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_6936efb4fc4a1d83653cd6e23a623282/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/vue-bundle-renderer@2.2.0/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, encodePath, joinRelativeURL } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ufo@1.6.4/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/vue@3.5.34_typescript@5.9.3/node_modules/vue/server-renderer/index.mjs';
@@ -23,7 +23,7 @@ import { createFetch, Headers as Headers$1 } from 'file://C:/Users/CMK-DEV/Deskt
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/node-mock-http@1.0.4/node_modules/node-mock-http/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/unstorage@1.17.5_db0@0.3.4_ioredis@5.10.1/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/unstorage@1.17.5_db0@0.3.4_ioredis@5.10.1/node_modules/unstorage/drivers/fs.mjs';
-import file_58_47_47_47C_58_47Users_47CMK_45DEV_47Desktop_472025_3720_45_3720DEV_47asytec_landingpage_45master_47asytec_landingpage_45master_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_808c40da5ebcfb49ebceaf8931e28aeb_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js';
+import file_58_47_47_47C_58_47Users_47CMK_45DEV_47Desktop_472025_3720_45_3720DEV_47asytec_landingpage_45master_47asytec_landingpage_45master_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_940f95a3ad761e5dac84b065cf0d3948_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js';
 import { digest } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
@@ -34,7 +34,7 @@ import { SourceMapConsumer } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DE
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { getContext } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/unctx@2.5.0/node_modules/unctx/dist/index.mjs';
 import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
-import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_97dc56c06cff55f1968e5d6503bd9b28/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
+import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+vite-builder@3.21.5_m_6936efb4fc4a1d83653cd6e23a623282/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$1, isAbsolute } from 'file://C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
@@ -55,7 +55,7 @@ storage.mount('/assets', assets$1);
 
 storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master","watchOptions":{"ignored":[null]}}));
 storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/server","watchOptions":{"ignored":[null]}}));
-storage.mount('cache:nuxt:payload', file_58_47_47_47C_58_47Users_47CMK_45DEV_47Desktop_472025_3720_45_3720DEV_47asytec_landingpage_45master_47asytec_landingpage_45master_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_808c40da5ebcfb49ebceaf8931e28aeb_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"file:///C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt/cache/nuxt/payload"}));
+storage.mount('cache:nuxt:payload', file_58_47_47_47C_58_47Users_47CMK_45DEV_47Desktop_472025_3720_45_3720DEV_47asytec_landingpage_45master_47asytec_landingpage_45master_47node_modules_47_46pnpm_47_64nuxt_43nitro_45server_643_4621_465_d_940f95a3ad761e5dac84b065cf0d3948_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"file:///C:/Users/CMK-DEV/Desktop/2025%20-%20DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt/cache/nuxt/payload"}));
 storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt"}));
 storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.nuxt/cache"}));
 storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/.data/kv"}));
@@ -653,7 +653,14 @@ const _inlineRuntimeConfig = {
       }
     }
   },
-  "public": {},
+  "public": {
+    "emailjs": {
+      "serviceId": "service_hvqd80d",
+      "templateId": "template_3sumspp",
+      "publicKey": "zAjTCUb17bKr7kM4A",
+      "toEmail": "info@asytec.com"
+    }
+  },
   "ipx": {
     "baseURL": "/_ipx",
     "alias": {},
@@ -2060,7 +2067,7 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _6sXev4BSwpTCeMgXoqi2ytt7fDRvKVOnOEdZPSihrxY = (function(nitro) {
+const _Os9TNQ0FHk0nKtIYNkMuV5VkMABs0bRMT_jzdHxPeQ = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
@@ -2068,7 +2075,7 @@ const _6sXev4BSwpTCeMgXoqi2ytt7fDRvKVOnOEdZPSihrxY = (function(nitro) {
 
 const rootDir = "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"Expertos en tecnología y consultoría, liderando el camino desde 1993. Más de 30 años impulsando la innovación tecnológica."}],"link":[{"rel":"icon","type":"image/png","href":"images/logoblanco.png"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"}],"style":[],"script":[],"noscript":[],"title":"ASYTEC Sistemas"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"Expertos en tecnología y consultoría, liderando el camino desde 1993. Más de 30 años impulsando la innovación tecnológica."}],"link":[{"rel":"icon","type":"image/png","href":"images/ISOTIPO AZUL.png"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"}],"style":[],"script":[],"noscript":[],"title":"ASYTEC Sistemas"};
 
 const appRootTag = "div";
 
@@ -2092,7 +2099,7 @@ const asyncContext = getContext("nuxt-dev", {
 	asyncContext: true,
 	AsyncLocalStorage
 });
-const _yE2J0e7LRgqA1xqcjo287xVhoDHHo5guVfpWEJ7Ol6w = (nitroApp) => {
+const _CL0L2prrrD8aRYUAg1BzF_DVlFye4mfkAOi2e62YiA = (nitroApp) => {
 	const handler = nitroApp.h3App.handler;
 	nitroApp.h3App.handler = (event) => {
 		return asyncContext.callAsync({
@@ -2168,8 +2175,8 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _6sXev4BSwpTCeMgXoqi2ytt7fDRvKVOnOEdZPSihrxY,
-_yE2J0e7LRgqA1xqcjo287xVhoDHHo5guVfpWEJ7Ol6w,
+  _Os9TNQ0FHk0nKtIYNkMuV5VkMABs0bRMT_jzdHxPeQ,
+_CL0L2prrrD8aRYUAg1BzF_DVlFye4mfkAOi2e62YiA,
 _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw
 ];
 
@@ -2737,16 +2744,14 @@ const _JXKAnM = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_2mS7Hi = () => Promise.resolve().then(function () { return contact_post$1; });
-const _lazy_8hn3AD = () => Promise.resolve().then(function () { return renderer; });
+const _lazy_LF1osR = () => Promise.resolve().then(function () { return renderer; });
 
 const handlers = [
   { route: '', handler: _3zxMev, lazy: false, middleware: true, method: undefined },
-  { route: '/api/contact', handler: _lazy_2mS7Hi, lazy: true, middleware: false, method: "post" },
-  { route: '/__nuxt_error', handler: _lazy_8hn3AD, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_LF1osR, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _JXKAnM, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_8hn3AD, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_LF1osR, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -3020,21 +3025,6 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
-}, Symbol.toStringTag, { value: 'Module' }));
-
-const contact_post = defineEventHandler(async (event) => {
-  const body = await readBody(event);
-  const { name, phone, email, message } = body;
-  if (!name || !phone || !email || !message) {
-    throw createError({ statusCode: 400, statusMessage: "Todos los campos son requeridos" });
-  }
-  console.log("[Contact Form]", { name, phone, email, message });
-  return { success: true };
-});
-
-const contact_post$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: contact_post
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

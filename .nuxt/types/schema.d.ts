@@ -16,7 +16,15 @@ import { NuxtModule, ModuleDependencyMeta } from '@nuxt/schema'
    },
   }
   interface SharedPublicRuntimeConfig {
+   emailjs: {
+      serviceId: string,
 
+      templateId: string,
+
+      publicKey: string,
+
+      toEmail: string,
+   },
   }
 declare module '@nuxt/schema' {
   interface ModuleDependencies {

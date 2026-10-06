@@ -8,6 +8,16 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  runtimeConfig: {
+    public: {
+      emailjs: {
+        serviceId: 'service_hvqd80d',
+        templateId: 'template_3sumspp',
+        publicKey: 'zAjTCUb17bKr7kM4A',
+        toEmail: 'info@asytec.com',
+      },
+    },
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
@@ -42,7 +52,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Expertos en tecnología y consultoría, liderando el camino desde 1993. Más de 30 años impulsando la innovación tecnológica.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: 'images/logoblanco.png' },
+        { rel: 'icon', type: 'image/png', href: 'images/ISOTIPO AZUL.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap' }
       ]

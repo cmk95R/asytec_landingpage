@@ -38,20 +38,20 @@ const { stop } = useIntersectionObserver(titleRef, ([{ isIntersecting }]) => {
 })
 
 const logos = [
-  { src: 'https://asytec.com/_next/static/media/austral.3fbdfd80.png', alt: 'Austral' },
-  { src: 'https://asytec.com/_next/static/media/toyota2.9b6e8e31.png', alt: 'Toyota', scale: 2.5 },
-  { src: 'https://asytec.com/_next/static/media/walmart2.e9e9227c.png', alt: 'Walmart', scale: 2.5 },
-  { src: 'https://asytec.com/_next/static/media/telecom-logo-2.b42f343a.png', alt: 'Telecom' },
-  { src: 'https://asytec.com/_next/static/media/petrobras2.804d7606.png', alt: 'Petrobras', scale: 2.5 },
-  { src: 'https://asytec.com/_next/static/media/modo.0206bd41.png', alt: 'Modo' },
-  { src: 'https://asytec.com/_next/static/media/edenor.d3c25ad1.png', alt: 'Edenor' },
-  { src: 'https://asytec.com/_next/static/media/pecom.5c92efa0.png', alt: 'Pecom' },
-  { src: 'https://asytec.com/_next/static/media/pluspetrol-logo-85781359A8-seeklogo.com.49ed8199.png', alt: 'Pluspetrol' },
-  { src: 'https://asytec.com/_next/static/media/sadesa.8c8fc730.png', alt: 'Sadesa', scale: 1.5 },
-  { src: 'https://asytec.com/_next/static/media/lesaffre.fdd4a5ac.png', alt: 'Lesaffre', scale: 1.5 },
-  { src: 'https://asytec.com/_next/static/media/nutrien.915aac01.png', alt: 'Nutrien' },
-  { src: 'https://asytec.com/_next/static/media/cgc.909c5281.png', alt: 'CGC' },
-  { src: 'https://asytec.com/_next/static/media/metropol.svg.291bc4c5.png', alt: 'Metropol' },
+  { src: '/images/austral.png', alt: 'Austral' },
+  { src: '/images/toyota2.png', alt: 'Toyota', scale: 1.5 },
+  { src: '/images/walmart2.png', alt: 'Walmart', scale: 2.5 },
+  { src: '/images/telecom.png', alt: 'Telecom' },
+  { src: '/images/petrobras2.png', alt: 'Petrobras', scale: 2.5 },
+  { src: '/images/modo.png', alt: 'Modo' },
+  { src: '/images/edenor.png', alt: 'Edenor' },
+  { src: '/images/pecom.png', alt: 'Pecom' },
+  { src: '/images/pluspetrol.png', alt: 'Pluspetrol' },
+  { src: '/images/sadesa.png', alt: 'Sadesa', scale: 1.5 },
+  { src: '/images/lesaffre.png', alt: 'Lesaffre', scale: 1.5 },
+  { src: '/images/nutrien.png', alt: 'Nutrien' },
+  { src: '/images/cgc.png', alt: 'CGC' },
+  { src: '/images/metropol.png', alt: 'Metropol' },
 ]
 </script>
 

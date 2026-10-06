@@ -215,10 +215,10 @@ const services = [
 .reveal.visible .reveal-badge { opacity: 1; transform: translateY(0); }
 
 .reveal-bar { transform: scaleX(0); transform-origin: center; transition: transform 0.6s ease; }
-.reveal.visible .bar-visible { transform: scaleX(1); }
+.reveal.visible .reveal-bar { transform: scaleX(1); }
 
 .reveal-sub { opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible .sub-visible { opacity: 1; transform: translateY(0); }
+.reveal.visible .reveal-sub { opacity: 1; transform: translateY(0); }
 
 /* Card hover */
 .service-card {

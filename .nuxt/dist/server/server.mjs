@@ -1,12 +1,12 @@
 import { shallowReactive, reactive, effectScope, getCurrentScope, hasInjectionContext, getCurrentInstance, inject, toRef, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, defineComponent, provide, h, ref, Suspense, Fragment, useSSRContext, defineAsyncComponent, unref, mergeProps, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, createApp } from "vue";
-import { $fetch } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ofetch@1.5.1/node_modules/ofetch/dist/node.mjs";
+import { $fetch } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ofetch@1.5.1/node_modules/ofetch/dist/node.mjs";
 import { baseURL } from "#internal/nuxt/paths";
-import { createHooks } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs";
-import { getContext, executeAsync } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/unctx@2.5.0/node_modules/unctx/dist/index.mjs";
-import { sanitizeStatusCode, createError as createError$1 } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs";
+import { createHooks } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs";
+import { getContext, executeAsync } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/unctx@2.5.0/node_modules/unctx/dist/index.mjs";
+import { sanitizeStatusCode, createError as createError$1, appendHeader } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs";
 import { START_LOCATION, createMemoryHistory, createRouter, RouterView } from "vue-router";
-import { defu } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/defu@6.1.7/node_modules/defu/dist/defu.mjs";
-import { hasProtocol, joinURL, withQuery, parseURL, encodePath, decodePath, isScriptProtocol } from "C:/Users/cfvhc/OneDrive/Desktop/asytec-nuxt/asytec-nuxt/node_modules/.pnpm/ufo@1.6.4/node_modules/ufo/dist/index.mjs";
+import { defu } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/defu@6.1.7/node_modules/defu/dist/defu.mjs";
+import { hasProtocol, joinURL, withQuery, parseURL, encodePath, decodePath, isScriptProtocol } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ufo@1.6.4/node_modules/ufo/dist/index.mjs";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSuspense, ssrRenderVNode } from "vue/server-renderer";
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch.create({
@@ -18,6 +18,7 @@ if (!("global" in globalThis)) {
 }
 const nuxtLinkDefaults = { "componentName": "NuxtLink" };
 const appId = "nuxt-app";
+const crawlLinks = true;
 function getNuxtAppCtx(id = appId) {
   return getContext(id, {
     asyncContext: false
@@ -231,6 +232,9 @@ function defineGetter(obj, key, val) {
 }
 const LayoutMetaSymbol = /* @__PURE__ */ Symbol("layout-meta");
 const PageRouteSymbol = /* @__PURE__ */ Symbol("route");
+function toArray$1(value) {
+  return Array.isArray(value) ? value : [value];
+}
 import.meta.url.replace(/\/app\/.*$/, "/");
 const useRouter = () => {
   return useNuxtApp()?.$router;
@@ -380,7 +384,7 @@ function freezeHead(head) {
     head.push = realPush;
   };
 }
-const unhead_0nspCItyQp7dwlftzXWxblkH4_yDPk8nZ_FWB5oUt44 = /* @__PURE__ */ defineNuxtPlugin({
+const unhead_FVWQz8Z4_fjG_Tj4tIbPfDLu9Omwtm5O5F6liDHX3K0 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:head",
   enforce: "pre",
   setup(nuxtApp) {
@@ -413,7 +417,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-Bxk4cJUf.js")
+    component: () => import("./_nuxt/index-CtN9qRpv.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -503,6 +507,7 @@ const configRouterOptions = {
   hashMode: false,
   scrollBehaviorType: "auto"
 };
+const hashMode = false;
 const routerOptions = {
   ...configRouterOptions,
   ...routerOptions0
@@ -545,7 +550,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     let __temp, __restore;
     let routerBase = (/* @__PURE__ */ useRuntimeConfig()).app.baseURL;
     const history = routerOptions.history?.(routerBase) ?? createMemoryHistory(routerBase);
-    const routes = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
+    const routes2 = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
     let startPosition;
     const router = createRouter({
       ...routerOptions,
@@ -566,7 +571,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
         }
       },
       history,
-      routes
+      routes: routes2
     });
     nuxtApp.vueApp.use(router);
     const previousRoute = shallowRef(router.currentRoute.value);
@@ -756,7 +761,7 @@ const reducers = [
   ["Ref", (data) => isRef(data) && data.value],
   ["Reactive", (data) => isReactive(data) && toRaw(data)]
 ];
-const revive_payload_server_b7v13u6VY_wuRlCEmwxDxF0zSGItmCXgWSrr4v_5blw = /* @__PURE__ */ defineNuxtPlugin({
+const revive_payload_server_oORbE2KmX2h_MEvhTzTCN_sOYDaRRH9DSMwV10AUN2k = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:revive-payload:server",
   setup() {
     for (const [reducer, fn] of reducers) {
@@ -767,11 +772,58 @@ const revive_payload_server_b7v13u6VY_wuRlCEmwxDxF0zSGItmCXgWSrr4v_5blw = /* @__
 const components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
+function useRequestEvent(nuxtApp) {
+  nuxtApp ||= useNuxtApp();
+  return nuxtApp.ssrContext?.event;
+}
+function prerenderRoutes(path) {
+  if (!import.meta.prerender) {
+    return;
+  }
+  const paths = toArray$1(path);
+  appendHeader(useRequestEvent(), "x-nitro-prerender", paths.map((p) => encodeURIComponent(p)).join(", "));
+}
+let routes;
+const prerender_server_Q5fQt2xgHSP48WoyhdkDAkXhMuBuSQ1b8dxJyQXtYz8 = /* @__PURE__ */ defineNuxtPlugin(async () => {
+  let __temp, __restore;
+  if (!import.meta.prerender || hashMode) {
+    return;
+  }
+  if (routes && !routes.length) {
+    return;
+  }
+  routes ||= Array.from(processRoutes(([__temp, __restore] = executeAsync(() => routerOptions.routes?.(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes));
+  const batch = routes.splice(0, 10);
+  prerenderRoutes(batch);
+});
+const OPTIONAL_PARAM_RE = /^\/?:.*(?:\?|\(\.\*\)\*)$/;
+function shouldPrerender(path) {
+  return crawlLinks;
+}
+function processRoutes(routes2, currentPath = "/", routesToPrerender = /* @__PURE__ */ new Set()) {
+  for (const route of routes2) {
+    if (OPTIONAL_PARAM_RE.test(route.path) && !route.children?.length && shouldPrerender()) {
+      routesToPrerender.add(currentPath);
+    }
+    if (route.path.includes(":")) {
+      continue;
+    }
+    const fullPath = joinURL(currentPath, route.path);
+    {
+      routesToPrerender.add(fullPath);
+    }
+    if (route.children) {
+      processRoutes(route.children, fullPath, routesToPrerender);
+    }
+  }
+  return routesToPrerender;
+}
 const plugins = [
-  unhead_0nspCItyQp7dwlftzXWxblkH4_yDPk8nZ_FWB5oUt44,
+  unhead_FVWQz8Z4_fjG_Tj4tIbPfDLu9Omwtm5O5F6liDHX3K0,
   plugin,
-  revive_payload_server_b7v13u6VY_wuRlCEmwxDxF0zSGItmCXgWSrr4v_5blw,
-  components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4
+  revive_payload_server_oORbE2KmX2h_MEvhTzTCN_sOYDaRRH9DSMwV10AUN2k,
+  components_plugin_z4hgvsiddfKkfXTP6M8M4zG5Cb7sGnDhcryKVM45Di4,
+  prerender_server_Q5fQt2xgHSP48WoyhdkDAkXhMuBuSQ1b8dxJyQXtYz8
 ];
 const defineRouteProvider = (name = "RouteProvider") => defineComponent({
   name,
@@ -891,8 +943,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-DZyjzRwE.js"));
-    const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-CB5ABipj.js"));
+    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-DwZPNEaT.js"));
+    const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-DEv1zvKH.js"));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -902,7 +954,7 @@ const _sfc_main$1 = {
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_2acd9ae26e8c5dd00dffc5f73e0dcaf7/node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 const _sfc_main = {
@@ -961,7 +1013,7 @@ const _sfc_main = {
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_713a37508bf10f3ece778b5630f548a5/node_modules/nuxt/dist/app/components/nuxt-root.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/.pnpm/nuxt@3.21.5_@parcel+watcher_2acd9ae26e8c5dd00dffc5f73e0dcaf7/node_modules/nuxt/dist/app/components/nuxt-root.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
 let entry;
@@ -988,6 +1040,7 @@ export {
   useNuxtApp as a,
   useRuntimeConfig as b,
   nuxtLinkDefaults as c,
+  useRequestEvent as d,
   entry_default as default,
   encodeRoutePath as e,
   navigateTo as n,

@@ -5,10 +5,10 @@
       <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
         
         <div class="flex-shrink-0">
-          <img 
-            src="https://asytec.com/_next/static/media/logotipo-azul.ad341051.png" 
-            alt="ASYTEC Sistemas" 
-            class="h-10 md:h-12 w-auto object-contain" 
+          <img
+            src="/images/logotipo-azul.png"
+            alt="ASYTEC Sistemas"
+            class="h-10 md:h-12 w-auto object-contain"
           />
         </div>
 

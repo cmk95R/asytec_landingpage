@@ -11,7 +11,7 @@
       <!-- Logo -->
       <a href="#home" @click.prevent="scrollTo('home')">
         <img
-          src="https://asytec.com/_next/static/media/logotipo-azul.ad341051.png"
+          src="/images/logotipo-azul.png"
           alt="ASYTEC Sistemas"
           :class="['h-10 transition-all duration-300', !scrolled && 'brightness-0 invert']"
         />
@@ -97,6 +97,7 @@ const navItems = [
   { id: 'about', label: 'Quiénes Somos' },
   { id: 'services', label: 'Servicios' },
   { id: 'social', label: 'Novedades' },
+  { id: 'beneficios', label: 'Beneficios' },
 ]
 
 const handleScroll = () => {

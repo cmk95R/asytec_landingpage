@@ -1,8 +1,8 @@
 declare global {
   const H3Error: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').H3Error
   const H3Event: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').H3Event
-  const __buildAssetsURL: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').buildAssetsURL
-  const __publicAssetsURL: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').publicAssetsURL
+  const __buildAssetsURL: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').buildAssetsURL
+  const __publicAssetsURL: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').publicAssetsURL
   const appendCorsHeaders: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').appendCorsHeaders
   const appendCorsPreflightHeaders: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').appendCorsPreflightHeaders
   const appendHeader: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').appendHeader
@@ -22,7 +22,7 @@ declare global {
   const createEventStream: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').createEventStream
   const createRouter: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').createRouter
   const defaultContentType: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').defaultContentType
-  const defineAppConfig: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/config').defineAppConfig
+  const defineAppConfig: typeof import('../../node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/config').defineAppConfig
   const defineCachedEventHandler: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/cache').defineCachedEventHandler
   const defineCachedFunction: typeof import('../../node_modules/.pnpm/nitropack@2.13.4_oxc-parser@0.129.0_srvx@0.11.15/node_modules/nitropack/dist/runtime/internal/cache').defineCachedFunction
   const defineEventHandler: typeof import('../../node_modules/.pnpm/h3@1.15.11/node_modules/h3').defineEventHandler
@@ -146,6 +146,6 @@ export { getRouteRules } from 'nitropack/runtime/internal/route-rules';
 export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
-export { defineAppConfig } from 'C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_808c40da5ebcfb49ebceaf8931e28aeb/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
+export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from 'C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
+export { defineAppConfig } from 'C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+nitro-server@3.21.5_d_940f95a3ad761e5dac84b065cf0d3948/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
 export { useImage } from 'C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/@nuxt+image@2.0.0_db0@0.3.4_cc92d7757b8a72dc39ed0e4ad5091632/node_modules/@nuxt/image/dist/runtime/server/utils/image';

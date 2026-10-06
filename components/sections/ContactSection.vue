@@ -11,9 +11,10 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
 
       <div class="text-center mb-16 reveal" ref="headerRef">
-        
-        <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-gray-900 mb-3">Contacto</h2>
-        <p class="text-gray-700 max-w-md mx-auto text-sm md:text-base">
+
+        <h2 class="section-title">Contacto</h2>
+        <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 rounded-full reveal-bar" />
+        <p class="section-subtitle max-w-md mx-auto mt-5 reveal-sub">
           Contactanos para más información sobre nuestros servicios.
         </p>
       </div>
@@ -114,6 +115,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import emailjs from '@emailjs/browser'
 
 // Refs para animaciones de intersección
 const headerRef = ref(null)
@@ -137,6 +139,8 @@ const errors = reactive({ name: '', phone: '', email: '', message: '' })
 const sending = ref(false)
 const feedback = ref(null)
 
+const config = useRuntimeConfig().public.emailjs
+
 // Validación
 const validate = () => {
   let valid = true
@@ -153,10 +157,18 @@ const handleSubmit = async () => {
   if (!validate()) return
   sending.value = true
   try {
-    await $fetch('/api/contact', {
-      method: 'POST',
-      body: { ...form },
-    })
+    await emailjs.send(
+      config.serviceId,
+      config.templateId,
+      {
+        to_email: config.toEmail,
+        from_name: form.name,
+        phone: form.phone,
+        reply_to: form.email,
+        message: form.message,
+      },
+      { publicKey: config.publicKey }
+    )
     feedback.value = { type: 'success', message: '¡Mensaje enviado! Nos pondremos en contacto a la brevedad.' }
     Object.assign(form, { name: '', phone: '', email: '', message: '' })
   } catch {
@@ -170,12 +182,12 @@ const handleSubmit = async () => {
 
 <style scoped>
 /* Transición suave para el mensaje de feedback */
-.feedback-enter-active, .feedback-leave-active { 
-  transition: all 0.4s ease; 
+.feedback-enter-active, .feedback-leave-active {
+  transition: all 0.4s ease;
 }
-.feedback-enter-from, .feedback-leave-to { 
-  opacity: 0; 
-  transform: translateY(-6px); 
+.feedback-enter-from, .feedback-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
 }
 
 /* Clases base para las animaciones del IntersectionObserver */
@@ -187,10 +199,16 @@ const handleSubmit = async () => {
 .reveal-left { transform: translateX(-30px); }
 .reveal-right { transform: translateX(30px); }
 
-.reveal.visible, 
-.reveal-left.visible, 
+.reveal.visible,
+.reveal-left.visible,
 .reveal-right.visible {
   opacity: 1;
   transform: translate(0);
 }
+
+.reveal-bar { transform: scaleX(0); transform-origin: center; transition: transform 0.6s ease; }
+.reveal.visible .reveal-bar { transform: scaleX(1); }
+
+.reveal-sub { opacity: 0; transform: translateY(10px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible .reveal-sub { opacity: 1; transform: translateY(0); }
 </style>
