@@ -19,18 +19,29 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8">
-        <a
-          v-for="item in navItems"
-          :key="item.id"
-          :href="`#${item.id}`"
-          @click.prevent="scrollTo(item.id)"
-          :class="[
-            'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
-            scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
-          ]"
-        >
-          {{ item.label }}
-        </a>
+        <template v-for="item in navItems" :key="item.id">
+          <NuxtLink
+            v-if="item.route"
+            :to="item.route"
+            :class="[
+              'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
+              scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
+            ]"
+          >
+            {{ item.label }}
+          </NuxtLink>
+          <a
+            v-else
+            :href="`#${item.id}`"
+            @click.prevent="scrollTo(item.id)"
+            :class="[
+              'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
+              scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
+            ]"
+          >
+            {{ item.label }}
+          </a>
+        </template>
         <a
           href="#contact"
           @click.prevent="scrollTo('contact')"
@@ -64,15 +75,24 @@
     <Transition name="mobile-menu">
       <div v-if="mobileOpen" class="md:hidden bg-white shadow-xl">
         <nav class="flex flex-col px-6 py-4 gap-4">
-          <a
-            v-for="item in navItems"
-            :key="item.id"
-            :href="`#${item.id}`"
-            @click.prevent="scrollTo(item.id); mobileOpen = false"
-            class="font-heading font-semibold text-sm tracking-wider uppercase text-gray-700 hover:text-primary-600 py-2 border-b border-gray-100"
-          >
-            {{ item.label }}
-          </a>
+          <template v-for="item in navItems" :key="item.id">
+            <NuxtLink
+              v-if="item.route"
+              :to="item.route"
+              @click="mobileOpen = false"
+              class="font-heading font-semibold text-sm tracking-wider uppercase text-gray-700 hover:text-primary-600 py-2 border-b border-gray-100"
+            >
+              {{ item.label }}
+            </NuxtLink>
+            <a
+              v-else
+              :href="`#${item.id}`"
+              @click.prevent="scrollTo(item.id); mobileOpen = false"
+              class="font-heading font-semibold text-sm tracking-wider uppercase text-gray-700 hover:text-primary-600 py-2 border-b border-gray-100"
+            >
+              {{ item.label }}
+            </a>
+          </template>
           <a
             href="#contact"
             @click.prevent="scrollTo('contact'); mobileOpen = false"
@@ -98,6 +118,7 @@ const navItems = [
   { id: 'services', label: 'Servicios' },
   { id: 'social', label: 'Novedades' },
   { id: 'beneficios', label: 'Beneficios' },
+  { id: 'diagnostico', label: 'Diagnóstico IT', route: '/diagnostico' },
 ]
 
 const handleScroll = () => {

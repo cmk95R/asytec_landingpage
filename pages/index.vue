@@ -6,6 +6,7 @@
     <ClientLogos />
     <AboutSection />
     <ServicesSection />
+    <DiagnosticoTeaser />
     <SocialFeed />
     <BenefitsSection />
     <JobsSection />

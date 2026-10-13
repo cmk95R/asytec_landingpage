@@ -417,7 +417,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-CtN9qRpv.js")
+    component: () => import("./_nuxt/index-ipvYBRNe.js")
+  },
+  {
+    name: "diagnostico",
+    path: "/diagnostico",
+    component: () => import("./_nuxt/diagnostico--bnK44iG.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -943,7 +948,7 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-DwZPNEaT.js"));
+    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-tJdWcON9.js"));
     const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-DEv1zvKH.js"));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -1037,15 +1042,15 @@ let entry;
 const entry_default = ((ssrContext) => entry(ssrContext));
 export {
   _export_sfc as _,
-  useNuxtApp as a,
-  useRuntimeConfig as b,
-  nuxtLinkDefaults as c,
-  useRequestEvent as d,
+  useRuntimeConfig as a,
+  useRequestEvent as b,
+  useRouter as c,
+  nuxtLinkDefaults as d,
   entry_default as default,
   encodeRoutePath as e,
   navigateTo as n,
   resolveRouteObject as r,
   tryUseNuxtApp as t,
-  useRouter as u
+  useNuxtApp as u
 };
 //# sourceMappingURL=server.mjs.map
