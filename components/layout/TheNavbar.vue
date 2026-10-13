@@ -96,7 +96,7 @@ const navItems = [
   { id: 'services', label: 'Servicios', to: '/#services' },
   { id: 'social', label: 'Novedades', to: '/#social' },
   { id: 'beneficios', label: 'Beneficios', to: '/#beneficios' },
-  { id: 'diagnostico', label: 'Diagnóstico IT', to: '/diagnostico' },
+  { id: 'diagnostico', label: 'Diagnóstico IA', to: '/diagnostico' },
 ]
 
 const handleScroll = () => {

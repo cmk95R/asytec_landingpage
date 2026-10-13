@@ -417,12 +417,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-DDMAPxM0.js")
+    component: () => import("./_nuxt/index-_Qy0EJRm.js")
   },
   {
     name: "diagnostico",
     path: "/diagnostico",
-    component: () => import("./_nuxt/diagnostico-Buuk_SKp.js")
+    component: () => import("./_nuxt/diagnostico-DoJJp2Fh.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;

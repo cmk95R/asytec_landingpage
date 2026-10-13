@@ -7,7 +7,7 @@
         <div v-if="step === 'intro'" key="intro" class="text-center">
           <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-12 max-w-2xl mx-auto">
 
-            <h2 class="text-3xl md:text-4xl font-bold text-primary-700 font-heading mb-4">Diagnóstico IT</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-primary-700 font-heading mb-4">Diagnóstico IA</h2>
 
             <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
               Evaluá la madurez de tu empresa en adopción de IA. 12 preguntas, 4 áreas clave.
@@ -370,8 +370,8 @@ const globalLevel = computed(() => {
 
 const resumenEjecutivo = computed(() => {
   const s = totalScore.value
-  const empresa = user.company || 'tu empresa'
-  if (s <= 3) return `En ${empresa}, la IA todavía no forma parte de la operación. Es posible que algunas personas la usen por su cuenta, pero no hay un uso establecido, conectado a los sistemas de la empresa ni con reglas claras. La buena noticia: estás en el punto donde las primeras decisiones tienen más impacto. Elegir bien un primer caso de uso y ponerle reglas mínimas desde el inicio evita la mayoría de los problemas que aparecen después.`
+  const empresa = user.company || 'Tu empresa'
+  if (s <= 3) return `${empresa} todavía no tiene la IA como parte de la operación. Es posible que algunas personas la usen por su cuenta, pero no hay un uso establecido, conectado a los sistemas ni con reglas claras. La buena noticia: estás en el punto donde las primeras decisiones tienen más impacto. Elegir bien un primer caso de uso y ponerle reglas mínimas desde el inicio evita la mayoría de los problemas que aparecen después.`
   if (s <= 6) return `${empresa} dio pasos iniciales con IA. Hay casos puntuales que funcionan, pero todavía falta conectar la IA a los sistemas propios, medir su uso y formalizar las prácticas. Es un buen momento para ordenar lo que funciona, cerrar los grises de gobernanza y pasar de la experimentación a algo más estructural.`
   if (s <= 9) return `${empresa} está consolidando su adopción de IA. La IA ya está conectada a la operación en varias áreas y se mide su impacto. Las oportunidades pendientes están en la profundidad del uso y en la formalización de prácticas. Es momento de profesionalizar lo que funciona y empezar a usarla para decidir, no solo para ejecutar.`
   return `${empresa} tiene una adopción madura de IA. Está conectada a los sistemas, se mide, hay gobernanza y la usa para tomar decisiones. Las oportunidades restantes son de optimización: ampliar cobertura, mejorar la calidad de los insights y mantener la formación del equipo al día.`

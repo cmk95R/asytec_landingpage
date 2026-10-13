@@ -2,7 +2,7 @@
   <section id="diagnostico-teaser" class="relative py-24 bg-white overflow-hidden">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center reveal" ref="headerRef">
-        <h2 class="section-title">Diagnóstico IT</h2>
+        <h2 class="section-title">Diagnóstico IA</h2>
         <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 rounded-full reveal-bar" />
         <p class="section-subtitle max-w-2xl mx-auto mt-5 reveal-sub">
           Evaluá la madurez tecnológica de tu empresa en 5 minutos. 17 preguntas, 5 áreas clave.

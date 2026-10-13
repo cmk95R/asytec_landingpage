@@ -193,9 +193,9 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Diagnóstico IT — Evaluá la madurez tecnológica de tu empresa | ASYTEC Sistemas',
+  title: 'Diagnóstico IA — ¿Tu empresa está lista para usar IA? | ASYTEC Sistemas',
   description: '17 preguntas, 5 áreas clave. En 5 minutos conocé tu nivel de madurez IT y recibí un análisis con tus fortalezas, oportunidades y un próximo paso concreto.',
-  ogTitle: 'Diagnóstico IT — ASYTEC Sistemas',
+  ogTitle: 'Diagnóstico IA — ASYTEC Sistemas',
   ogDescription: 'Evaluá la madurez tecnológica de tu empresa en 5 minutos.',
   ogImage: '/images/carousel1.e3fa0991.png',
 })
