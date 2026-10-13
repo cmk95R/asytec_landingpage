@@ -17,7 +17,7 @@
             <div class="border-t border-gray-100 pt-8 mb-8 text-left">
               <p class="text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary-600 mb-4 text-center">Qué evaluamos</p>
               <ul class="space-y-3 text-sm text-gray-700">
-                <li v-for="area in areas" :key="area.id" class="flex items-start gap-3">
+                <li v-for="area in areas" :key="area.id" class="flex items-center gap-3">
                   <span class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0">
                     <span class="w-4 h-4" v-html="area.icon" />
                   </span>

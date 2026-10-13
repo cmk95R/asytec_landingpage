@@ -46,7 +46,7 @@
                 </svg>
               </div>
               <h3 class="font-heading font-bold text-lg text-gray-900 mb-3">Te ubica</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">La mayoría de las empresas no sabe si está adelantada o atrasada con IT porque no tiene con qué compararse. El test te da una posición concreta en 5 áreas, no una sensación.</p>
+              <p class="text-sm text-gray-600 leading-relaxed">La mayoría de las empresas no sabe si está adelantada o atrasada con la IA porque no tiene con qué compararse. El test te da una posición concreta en cuatro áreas, no una sensación.</p>
             </article>
 
             <article class="bg-white rounded-2xl border border-gray-100 p-7 shadow-sm hover:shadow-xl transition-all duration-500">
@@ -56,7 +56,7 @@
                 </svg>
               </div>
               <h3 class="font-heading font-bold text-lg text-gray-900 mb-3">Te ordena la prioridad</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">No todas las oportunidades valen lo mismo. El análisis te marca las tres donde el esfuerzo que tenés que poner es más chico que el problema que resolvés.</p>
+              <p class="text-sm text-gray-600 leading-relaxed">No todas las áreas valen lo mismo. El análisis te marca las tres áreas con mayor oportunidad: las que más impacto te dan por el menor esfuerzo.</p>
             </article>
 
             <article class="bg-white rounded-2xl border border-gray-100 p-7 shadow-sm hover:shadow-xl transition-all duration-500">
@@ -97,7 +97,7 @@
             <article class="text-center">
               <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-600 text-white font-heading font-extrabold text-2xl mb-5 shadow-md">03</div>
               <h3 class="font-heading font-bold text-lg text-gray-900 mb-3">Recibís el análisis</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">Tu puntaje por área, tus fortalezas, las tres oportunidades más grandes y el paso siguiente. Te lo mando por mail para que lo tengas y lo puedas compartir con tu equipo.</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Tu puntaje por área, tus fortalezas, las tres oportunidades más grandes y el paso siguiente. Te lo mandamos por mail para que lo tengas y lo puedas compartir con tu equipo.</p>
             </article>
           </div>
         </div>
