@@ -9,20 +9,19 @@
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#home" @click.prevent="scrollTo('home')">
+      <NuxtLink to="/">
         <img
           src="/images/logotipo-azul.png"
           alt="ASYTEC Sistemas"
           :class="['h-10 transition-all duration-300', !scrolled && 'brightness-0 invert']"
         />
-      </a>
+      </NuxtLink>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8">
         <template v-for="item in navItems" :key="item.id">
           <NuxtLink
-            v-if="item.route"
-            :to="item.route"
+            :to="item.to"
             :class="[
               'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
               scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
@@ -30,21 +29,9 @@
           >
             {{ item.label }}
           </NuxtLink>
-          <a
-            v-else
-            :href="`#${item.id}`"
-            @click.prevent="scrollTo(item.id)"
-            :class="[
-              'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
-              scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
-            ]"
-          >
-            {{ item.label }}
-          </a>
         </template>
-        <a
-          href="#contact"
-          @click.prevent="scrollTo('contact')"
+        <NuxtLink
+          to="/#contact"
           :class="[
             'px-6 py-2 font-heading font-semibold text-sm tracking-wider uppercase transition-all duration-300 rounded-lg',
             scrolled
@@ -53,7 +40,7 @@
           ]"
         >
           CONTACTO
-        </a>
+        </NuxtLink>
       </nav>
 
       <!-- Mobile menu button -->
@@ -77,29 +64,20 @@
         <nav class="flex flex-col px-6 py-4 gap-4">
           <template v-for="item in navItems" :key="item.id">
             <NuxtLink
-              v-if="item.route"
-              :to="item.route"
+              :to="item.to"
               @click="mobileOpen = false"
               class="font-heading font-semibold text-sm tracking-wider uppercase text-gray-700 hover:text-primary-600 py-2 border-b border-gray-100"
             >
               {{ item.label }}
             </NuxtLink>
-            <a
-              v-else
-              :href="`#${item.id}`"
-              @click.prevent="scrollTo(item.id); mobileOpen = false"
-              class="font-heading font-semibold text-sm tracking-wider uppercase text-gray-700 hover:text-primary-600 py-2 border-b border-gray-100"
-            >
-              {{ item.label }}
-            </a>
           </template>
-          <a
-            href="#contact"
-            @click.prevent="scrollTo('contact'); mobileOpen = false"
+          <NuxtLink
+            to="/#contact"
+            @click="mobileOpen = false"
             class="btn-primary mt-2 justify-center rounded-lg"
           >
             CONTACTO
-          </a>
+          </NuxtLink>
         </nav>
       </div>
     </Transition>
@@ -113,21 +91,16 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'Quiénes Somos' },
-  { id: 'services', label: 'Servicios' },
-  { id: 'social', label: 'Novedades' },
-  { id: 'beneficios', label: 'Beneficios' },
-  { id: 'diagnostico', label: 'Diagnóstico IT', route: '/diagnostico' },
+  { id: 'home', label: 'Home', to: '/' },
+  { id: 'about', label: 'Quiénes Somos', to: '/#about' },
+  { id: 'services', label: 'Servicios', to: '/#services' },
+  { id: 'social', label: 'Novedades', to: '/#social' },
+  { id: 'beneficios', label: 'Beneficios', to: '/#beneficios' },
+  { id: 'diagnostico', label: 'Diagnóstico IT', to: '/diagnostico' },
 ]
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 60
-}
-
-const scrollTo = (id) => {
-  const el = document.getElementById(id)
-  if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
 
 onMounted(() => {
