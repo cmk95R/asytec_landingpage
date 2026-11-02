@@ -13,7 +13,7 @@
         <img
           src="/images/logotipo-azul.png"
           alt="ASYTEC Sistemas"
-          :class="['h-10 transition-all duration-300', !scrolled && 'brightness-0 invert']"
+          :class="['h-10 transition-all duration-300', !scrolled && !lightNav && 'brightness-0 invert']"
         />
       </NuxtLink>
 
@@ -24,7 +24,7 @@
             :to="item.to"
             :class="[
               'font-heading font-semibold text-sm tracking-wider uppercase transition-colors duration-200',
-              scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
+              scrolled || lightNav ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-blue-200'
             ]"
           >
             {{ item.label }}
@@ -34,7 +34,7 @@
           to="/#contact"
           :class="[
             'px-6 py-2 font-heading font-semibold text-sm tracking-wider uppercase transition-all duration-300 rounded-lg',
-            scrolled
+            scrolled || lightNav
               ? 'bg-primary-600 text-white hover:bg-primary-700'
               : 'border-2 border-white text-white hover:bg-white hover:text-primary-700'
           ]"
@@ -46,7 +46,7 @@
       <!-- Mobile menu button -->
       <button
         @click="mobileOpen = !mobileOpen"
-        :class="['md:hidden p-2', scrolled ? 'text-gray-700' : 'text-white']"
+        :class="['md:hidden p-2', scrolled || lightNav ? 'text-gray-700' : 'text-white']"
         aria-label="Menú"
       >
         <svg v-if="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,8 +87,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const route = useRoute()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
+const lightNav = computed(() => route.path === '/diagnostico')
 
 const navItems = [
   { id: 'home', label: 'Home', to: '/' },

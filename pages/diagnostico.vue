@@ -15,8 +15,6 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
             <div class="max-w-xl">
-              <img src="/images/logotipo-azul.png" alt="ASYTEC Sistemas" class="h-9 w-auto mb-8" />
-
               <p class="text-xs md:text-sm font-heading font-bold uppercase tracking-[0.2em] text-primary-600 mb-4">
                 Evaluación de madurez en IA
               </p>
@@ -48,7 +46,11 @@
             </div>
 
             <div class="relative">
-              <div class="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 md:p-7 max-w-md mx-auto">
+              <div
+                class="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 md:p-7 max-w-md mx-auto"
+                @focusin="samplePaused = true"
+                @focusout="samplePaused = false"
+              >
                 <div class="flex items-center justify-between pb-5 border-b border-gray-100">
                   <div>
                     <p class="text-[10px] font-heading font-bold uppercase tracking-[0.18em] text-primary-600">Informe de diagnóstico</p>
@@ -57,30 +59,58 @@
                   <div class="relative w-16 h-16">
                     <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
                       <circle cx="60" cy="60" r="52" fill="none" stroke="#e6f0fa" stroke-width="12" />
-                      <circle cx="60" cy="60" r="52" fill="none" stroke="#0d4f9a" stroke-width="12" stroke-linecap="round" stroke-dasharray="170 327" />
+                      <circle
+                        cx="60" cy="60" r="52" fill="none" stroke="#0d4f9a" stroke-width="12" stroke-linecap="round"
+                        class="transition-all duration-700"
+                        :stroke-dasharray="ringDash(currentSample.score)"
+                      />
                     </svg>
                     <div class="absolute inset-0 flex items-center justify-center">
-                      <span class="font-heading font-extrabold text-base text-gray-900">6/12</span>
+                      <span class="font-heading font-extrabold text-base text-gray-900">{{ currentSample.score }}/12</span>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-5 space-y-4">
-                  <div v-for="(row, i) in sampleRows" :key="row.name">
-                    <div class="flex items-center justify-between mb-1.5">
-                      <span class="text-xs font-medium text-gray-700">{{ row.name }}</span>
-                      <span class="text-[11px] text-gray-400">{{ row.score }}/3</span>
-                    </div>
-                    <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                      <div class="h-1.5 rounded-full bg-primary-600" :style="`width: ${row.score / 3 * 100}%`" />
+                <Transition name="sample" mode="out-in">
+                  <div :key="currentSample.key" class="pt-5 space-y-4">
+                    <div v-for="row in currentSample.rows" :key="row.name">
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-xs font-medium text-gray-700">{{ row.name }}</span>
+                        <span class="text-[11px] text-gray-400">{{ row.score }}/3</span>
+                      </div>
+                      <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                        <div
+                          class="h-1.5 rounded-full bg-primary-600 transition-all duration-700"
+                          :style="`width: ${row.score / 3 * 100}%`"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Transition>
 
                 <div class="mt-6 pt-5 border-t border-gray-100">
                   <p class="text-[10px] font-heading font-bold uppercase tracking-[0.18em] text-gray-400 mb-1">Nivel de madurez</p>
-                  <p class="text-sm font-heading font-bold text-primary-700">Nivel inicial</p>
+                  <Transition name="sample" mode="out-in">
+                    <p :key="currentSample.key" class="text-sm font-heading font-bold text-primary-700">
+                      {{ currentSample.level }}
+                    </p>
+                  </Transition>
                 </div>
+              </div>
+
+              <div class="mt-4 flex items-center justify-center gap-2">
+                <button
+                  v-for="(sample, i) in sampleReports"
+                  :key="sample.key"
+                  type="button"
+                  @click="selectSample(i)"
+                  :aria-label="`Ver ejemplo: ${sample.level}`"
+                  :aria-pressed="sampleIndex === i"
+                  :class="[
+                    'h-1.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+                    sampleIndex === i ? 'w-6 bg-primary-600' : 'w-1.5 bg-gray-300 hover:bg-primary-300'
+                  ]"
+                />
               </div>
 
               <div aria-hidden="true" class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-100 rounded-full blur-2xl opacity-70" />
@@ -330,12 +360,69 @@ const steps = [
   },
 ]
 
-const sampleRows = [
-  { name: 'Ejecución', score: 2 },
-  { name: 'Configuración', score: 2 },
-  { name: 'Inteligencia', score: 1 },
-  { name: 'Gobernanza', score: 1 },
+const sampleReports = [
+  {
+    key: 'inicial',
+    score: 2,
+    level: 'Inicial',
+    rows: [
+      { name: 'Ejecución', score: 1 },
+      { name: 'Configuración', score: 1 },
+      { name: 'Inteligencia', score: 0 },
+      { name: 'Gobernanza', score: 0 },
+    ],
+  },
+  {
+    key: 'medio',
+    score: 6,
+    level: 'Medio',
+    rows: [
+      { name: 'Ejecución', score: 2 },
+      { name: 'Configuración', score: 2 },
+      { name: 'Inteligencia', score: 1 },
+      { name: 'Gobernanza', score: 1 },
+    ],
+  },
+  {
+    key: 'avanzado',
+    score: 11,
+    level: 'Avanzado',
+    rows: [
+      { name: 'Ejecución', score: 3 },
+      { name: 'Configuración', score: 3 },
+      { name: 'Inteligencia', score: 3 },
+      { name: 'Gobernanza', score: 2 },
+    ],
+  },
 ]
+
+const sampleIndex = ref(0)
+const samplePaused = ref(false)
+const currentSample = computed(() => sampleReports[sampleIndex.value])
+
+const ringCircumference = 2 * Math.PI * 52
+const ringDash = (score) => {
+  const filled = (score / 12) * ringCircumference
+  return `${filled.toFixed(1)} ${ringCircumference.toFixed(1)}`
+}
+
+const selectSample = (index) => {
+  sampleIndex.value = index
+}
+
+let sampleTimer = null
+
+onMounted(() => {
+  sampleTimer = window.setInterval(() => {
+    if (!samplePaused.value) {
+      sampleIndex.value = (sampleIndex.value + 1) % sampleReports.length
+    }
+  }, 4500)
+})
+
+onUnmounted(() => {
+  if (sampleTimer) window.clearInterval(sampleTimer)
+})
 
 useSeoMeta({
   title: 'Diagnóstico de adopción de IA — ASYTEC Sistemas',
@@ -345,3 +432,25 @@ useSeoMeta({
   ogImage: '/images/carousel1.e3fa0991.png',
 })
 </script>
+
+<style scoped>
+.sample-enter-active,
+.sample-leave-active {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.sample-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.sample-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sample-enter-active,
+  .sample-leave-active {
+    transition: none;
+  }
+}
+</style>
