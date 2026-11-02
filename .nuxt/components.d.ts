@@ -20,6 +20,7 @@ export const AboutSection: typeof import("../components/sections/AboutSection.vu
 export const BenefitsSection: typeof import("../components/sections/BenefitsSection.vue")['default']
 export const ClientLogos: typeof import("../components/sections/ClientLogos.vue")['default']
 export const ContactSection: typeof import("../components/sections/ContactSection.vue")['default']
+export const DiagnosticoModal: typeof import("../components/sections/DiagnosticoModal.vue")['default']
 export const DiagnosticoTeaser: typeof import("../components/sections/DiagnosticoTeaser.vue")['default']
 export const HeroCarousel: typeof import("../components/sections/HeroCarousel.vue")['default']
 export const JobsSection: typeof import("../components/sections/JobsSection.vue")['default']
@@ -56,6 +57,7 @@ export const LazyAboutSection: LazyComponent<typeof import("../components/sectio
 export const LazyBenefitsSection: LazyComponent<typeof import("../components/sections/BenefitsSection.vue")['default']>
 export const LazyClientLogos: LazyComponent<typeof import("../components/sections/ClientLogos.vue")['default']>
 export const LazyContactSection: LazyComponent<typeof import("../components/sections/ContactSection.vue")['default']>
+export const LazyDiagnosticoModal: LazyComponent<typeof import("../components/sections/DiagnosticoModal.vue")['default']>
 export const LazyDiagnosticoTeaser: LazyComponent<typeof import("../components/sections/DiagnosticoTeaser.vue")['default']>
 export const LazyHeroCarousel: LazyComponent<typeof import("../components/sections/HeroCarousel.vue")['default']>
 export const LazyJobsSection: LazyComponent<typeof import("../components/sections/JobsSection.vue")['default']>

@@ -1,13 +1,14 @@
-import { shallowReactive, reactive, effectScope, getCurrentScope, hasInjectionContext, getCurrentInstance, inject, toRef, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, defineComponent, provide, h, ref, Suspense, Fragment, watch, useSSRContext, defineAsyncComponent, unref, mergeProps, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, createApp } from "vue";
+import { shallowReactive, reactive, effectScope, getCurrentScope, hasInjectionContext, getCurrentInstance, inject, toRef, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, defineComponent, provide, h, ref, Suspense, Fragment, computed, watch, mergeProps, unref, useSSRContext, nextTick, defineAsyncComponent, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, createApp } from "vue";
 import { $fetch } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ofetch@1.5.1/node_modules/ofetch/dist/node.mjs";
-import { baseURL } from "#internal/nuxt/paths";
+import { baseURL, publicAssetsURL } from "#internal/nuxt/paths";
 import { createHooks } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs";
 import { getContext, executeAsync } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/unctx@2.5.0/node_modules/unctx/dist/index.mjs";
 import { sanitizeStatusCode, createError as createError$1, appendHeader } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/h3@1.15.11/node_modules/h3/dist/index.mjs";
 import { START_LOCATION, createMemoryHistory, createRouter, RouterView } from "vue-router";
 import { defu } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/defu@6.1.7/node_modules/defu/dist/defu.mjs";
 import { hasProtocol, joinURL, withQuery, parseURL, encodePath, decodePath, isScriptProtocol } from "C:/Users/CMK-DEV/Desktop/2025 - DEV/asytec_landingpage-master/asytec_landingpage-master/node_modules/.pnpm/ufo@1.6.4/node_modules/ufo/dist/index.mjs";
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSuspense, ssrRenderVNode } from "vue/server-renderer";
+import { ssrRenderAttrs, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderStyle, ssrIncludeBooleanAttr, ssrLooseContain, ssrLooseEqual, ssrRenderTeleport, ssrRenderComponent, ssrRenderSuspense, ssrRenderVNode } from "vue/server-renderer";
+import "@emailjs/browser";
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch.create({
     baseURL: baseURL()
@@ -417,12 +418,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-_Qy0EJRm.js")
+    component: () => import("./_nuxt/index-CAd-5COr.js")
   },
   {
     name: "diagnostico",
     path: "/diagnostico",
-    component: () => import("./_nuxt/diagnostico-CsA72ZKU.js")
+    component: () => import("./_nuxt/diagnostico-ClCDRdI9.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
@@ -862,7 +863,7 @@ const defineRouteProvider = (name = "RouteProvider") => defineComponent({
   }
 });
 const RouteProvider = defineRouteProvider();
-const __nuxt_component_0 = defineComponent({
+const __nuxt_component_0$1 = defineComponent({
   name: "NuxtPage",
   inheritAttrs: false,
   props: {
@@ -913,6 +914,354 @@ function normalizeSlot(slot, data) {
   const slotContent = slot(data);
   return slotContent.length === 1 ? h(slotContent[0]) : h(Fragment, void 0, slotContent);
 }
+const _imports_0 = publicAssetsURL("/images/logotipo-azul.png");
+const _imports_1 = publicAssetsURL("/images/ISOTIPO AZUL.png");
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
+const iconEjecucion = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>';
+const iconConfig = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>';
+const iconInteligencia = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>';
+const iconGobernanza = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>';
+const ringRadius = 52;
+const _sfc_main$4 = {
+  __name: "TestSection",
+  __ssrInlineRender: true,
+  props: {
+    embedded: { type: Boolean, default: false }
+  },
+  setup(__props) {
+    (/* @__PURE__ */ useRuntimeConfig()).public.emailjs;
+    const step = ref("intro");
+    const progress = ref(0);
+    const answers = reactive({});
+    const user = reactive({ name: "", email: "", company: "", role: "", area: "", size: "", consent: false });
+    const sending = ref(false);
+    const emailStatus = ref(null);
+    ref("q-left");
+    const hasSaved = ref(false);
+    ref(false);
+    const openArea = ref(null);
+    ref(null);
+    const today = (/* @__PURE__ */ new Date()).toLocaleDateString("es-AR", { day: "2-digit", month: "long", year: "numeric" });
+    const areas = reactive([
+      {
+        id: "ejecucion",
+        name: "Ejecución",
+        icon: iconEjecucion,
+        description: "¿La IA hace cosas en tu día a día?",
+        questions: [
+          { q: "¿La IA responde consultas a través de un canal oficial de tu empresa? (chatbot en la web, WhatsApp, asistente en el chat interno)", weight: 1 },
+          { q: "¿Usan IA para crear o revisar documentos y contenido?", weight: 1 },
+          { q: "¿La IA automatiza algún proceso recurrente de principio a fin?", weight: 1 }
+        ]
+      },
+      {
+        id: "configuracion",
+        name: "Configuración",
+        icon: iconConfig,
+        description: "¿La IA está conectada a tu empresa?",
+        questions: [
+          { q: "¿La IA consulta una base de conocimiento propia de tu empresa?", weight: 1 },
+          { q: "¿La IA está integrada con algún sistema que ya usan?", weight: 1 },
+          { q: "¿Monitorean el uso de la IA con registros o métricas?", weight: 1 }
+        ]
+      },
+      {
+        id: "inteligencia",
+        name: "Inteligencia",
+        icon: iconInteligencia,
+        description: "¿La IA te ayuda a decidir?",
+        questions: [
+          { q: "¿La IA analiza datos de tu empresa y genera insights para tomar decisiones?", weight: 1 },
+          { q: "¿Usan IA para analizar información no estructurada? (encuestas, comentarios, reuniones)", weight: 1 },
+          { q: "¿La IA propone acciones o recomendaciones concretas?", weight: 1 }
+        ]
+      },
+      {
+        id: "gobernanza",
+        name: "Gobernanza",
+        icon: iconGobernanza,
+        description: "¿El uso de la IA está bajo control?",
+        questions: [
+          { q: "¿Existe una política formal de uso de IA en tu empresa?", weight: 1 },
+          { q: "¿La solución de IA cumple requisitos de privacidad y seguridad? (protección de datos, control de accesos, auditoría)", weight: 1 },
+          { q: "¿El equipo recibe formación y tiene un canal para reportar errores? (capacitación y lugar donde avisar si algo falla)", weight: 1 }
+        ]
+      }
+    ]);
+    const questions = computed(() => areas.flatMap((a) => a.questions.map((q) => ({ ...q, areaId: a.id }))));
+    const currentQuestion = computed(() => questions.value[progress.value]);
+    const currentArea = computed(() => areas.find((a) => a.id === currentQuestion.value.areaId));
+    const indicatorIndex = computed(() => {
+      const area = currentArea.value;
+      const offset = areas.slice(0, areas.indexOf(area)).reduce((s, a) => s + a.questions.length, 0);
+      return progress.value - offset + 1;
+    });
+    const totalScore = computed(() => Object.values(answers).filter(Boolean).length);
+    const areaSegments = computed(() => {
+      let offset = 0;
+      return areas.map((area) => {
+        const total = area.questions.length;
+        let answered = 0;
+        for (let i = 0; i < total; i++) {
+          if (answers[offset + i] !== void 0) answered++;
+        }
+        const active = progress.value >= offset && progress.value < offset + total;
+        const done = answered === total;
+        offset += total;
+        return { done, active };
+      });
+    });
+    const ringCircumference = 2 * Math.PI * ringRadius;
+    const ringDash = computed(() => {
+      const pct = totalScore.value / questions.value.length;
+      return `${(pct * ringCircumference).toFixed(2)} ${ringCircumference.toFixed(2)}`;
+    });
+    const levelLabel = (s) => {
+      if (s === 0) return "No iniciada";
+      if (s === 1) return "Inicial";
+      if (s === 2) return "En desarrollo";
+      return "Avanzada";
+    };
+    const levelBg = (s) => {
+      if (s === 0) return "bg-red-400";
+      if (s === 1) return "bg-amber-400";
+      if (s === 2) return "bg-primary-400";
+      return "bg-primary-600";
+    };
+    const levelDot = (s) => {
+      if (s === 0) return "bg-red-400";
+      if (s === 1) return "bg-amber-400";
+      if (s === 2) return "bg-primary-400";
+      return "bg-primary-600";
+    };
+    const globalLevel = computed(() => {
+      const s = totalScore.value;
+      if (s <= 3) return { label: "Punto de partida", profile: "Perfil inicial: la IA todavía no forma parte de la operación de forma establecida." };
+      if (s <= 6) return { label: "Nivel inicial", profile: "Bases sentadas: hay iniciativas puntuales que todavía no se sistematizaron." };
+      if (s <= 9) return { label: "En consolidación", profile: "Avanzando con orden: la IA ya está presente en varias dimensiones y se mide su impacto." };
+      return { label: "Avanzado", profile: "Adopción madura: la IA está conectada a la operación y usada para decidir." };
+    });
+    const resumenEjecutivo = computed(() => {
+      const s = totalScore.value;
+      const empresa = user.company || "Tu empresa";
+      if (s <= 3) return `${empresa} todavía no tiene la IA como parte de la operación. Es posible que algunas personas la usen por su cuenta, pero no hay un uso establecido, conectado a los sistemas ni con reglas claras. La buena noticia: estás en el punto donde las primeras decisiones tienen más impacto. Elegir bien un primer caso de uso y ponerle reglas mínimas desde el inicio evita la mayoría de los problemas que aparecen después.`;
+      if (s <= 6) return `${empresa} dio pasos iniciales con IA. Hay casos puntuales que funcionan, pero todavía falta conectar la IA a los sistemas propios, medir su uso y formalizar las prácticas. Es un buen momento para ordenar lo que funciona, cerrar los grises de gobernanza y pasar de la experimentación a algo más estructural.`;
+      if (s <= 9) return `${empresa} está consolidando su adopción de IA. La IA ya está conectada a la operación en varias áreas y se mide su impacto. Las oportunidades pendientes están en la profundidad del uso y en la formalización de prácticas. Es momento de profesionalizar lo que funciona y empezar a usarla para decidir, no solo para ejecutar.`;
+      return `${empresa} tiene una adopción madura de IA. Está conectada a los sistemas, se mide, hay gobernanza y la usa para tomar decisiones. Las oportunidades restantes son de optimización: ampliar cobertura, mejorar la calidad de los insights y mantener la formación del equipo al día.`;
+    });
+    const oportunidades = computed(() => {
+      const sorted = [...areas].sort((a, b) => a.score - b.score);
+      return sorted.slice(0, 3).map((a) => {
+        if (a.id === "ejecucion") return "Usar IA para crear y revisar contenido, responder consultas o automatizar un proceso de punta a punta. Es la puerta de entrada más simple y donde el ahorro de tiempo se ve primero. Empezar por un caso de uso concreto con entrada clara.";
+        if (a.id === "configuracion") return "Conectar la IA al conocimiento propio de la empresa y a los sistemas que ya usan. Hoy la IA responde con generalidades; conectada a la documentación y procesos reales es donde realmente cambia la productividad.";
+        if (a.id === "inteligencia") return "Usar IA para analizar datos y generar insights, no solo para producir. Pedirle que explique causas y patrones, que analice información no estructurada y que proponga acciones concretas para usar como insumo en reuniones de decisión.";
+        if (a.id === "gobernanza") return "Definir una política formal de uso de IA, verificar privacidad y seguridad, y armar un canal de formación y reporte de errores. Sin reglas claras, cada persona decide por su cuenta qué comparte y con qué herramienta.";
+        return `Avanzar en ${a.name.toLowerCase()}.`;
+      });
+    });
+    const proximoPaso = computed(() => {
+      const lowest = [...areas].sort((a, b) => a.score - b.score)[0];
+      if (lowest.id === "ejecucion") return "Elegí un tipo de contenido que se produce seguido (propuestas, informes, comunicados) y definí un flujo: la IA hace el borrador, una persona revisa. O identificá un proceso repetitivo con entrada clara y automatizalo.";
+      if (lowest.id === "configuracion") return "Reuní los documentos que más se consultan en un solo lugar, asigná un responsable de mantenerlos y conectá la IA a esa base. Después, elegí un sistema donde el equipo pasa más tiempo y explorá qué integración ya está disponible.";
+      if (lowest.id === "inteligencia") return "Tomá un informe que el área produce todos los meses y pedile a la IA que explique causas y patrones, no solo que resuma. Compará con la lectura del equipo. Después, hacé que proponga acciones concretas para usar como insumo en la próxima reunión.";
+      if (lowest.id === "gobernanza") return "Redactá una política de una página: qué herramientas están permitidas, qué datos no se pueden ingresar, quién aprueba nuevos usos. Comunicarla y designar a alguien responsable de revisarla y mantenerla al día.";
+      return "Elegí un solo caso de uso de bajo riesgo y alto volumen, y hacelo bien antes de sumar otro.";
+    });
+    const areaOffset = (areaIndex) => areas.slice(0, areaIndex).reduce((s, a) => s + a.questions.length, 0);
+    const isYes = (areaIndex, questionIndex) => answers[areaOffset(areaIndex) + questionIndex] === true;
+    const persist = () => {
+      return;
+    };
+    watch([progress, answers], persist, { deep: true });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<section${ssrRenderAttrs(mergeProps({
+        id: "diagnostico",
+        class: __props.embedded ? "relative py-2 bg-transparent" : "relative py-20 bg-gray-50"
+      }, _attrs))} data-v-ccc08f1c><div class="relative max-w-4xl mx-auto px-4 sm:px-6" data-v-ccc08f1c>`);
+      if (step.value === "intro") {
+        _push(`<div class="text-center" data-v-ccc08f1c><div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-12 max-w-2xl mx-auto" data-v-ccc08f1c><img${ssrRenderAttr("src", _imports_0)} alt="ASYTEC Sistemas" class="h-9 w-auto mx-auto mb-8" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary-600 mb-3" data-v-ccc08f1c> Evaluación de madurez en IA </p><h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4" data-v-ccc08f1c>Diagnóstico de adopción de IA</h2><p class="text-gray-600 text-base md:text-lg leading-relaxed mb-8" data-v-ccc08f1c> 12 indicadores sobre lo que tu empresa ya hace hoy. Al finalizar se genera un informe con el puntaje por dimensión, los hallazgos priorizados y un próximo paso concreto. </p><div class="border-t border-gray-100 pt-8 mb-8 text-left" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary-600 mb-4 text-center" data-v-ccc08f1c>Dimensiones evaluadas</p><ul class="space-y-3 text-sm text-gray-700" data-v-ccc08f1c><!--[-->`);
+        ssrRenderList(areas, (area) => {
+          _push(`<li class="flex items-center gap-3" data-v-ccc08f1c><span class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0" data-v-ccc08f1c><span class="w-4 h-4" data-v-ccc08f1c>${area.icon ?? ""}</span></span><div data-v-ccc08f1c><strong class="text-gray-900" data-v-ccc08f1c>${ssrInterpolate(area.name)}</strong><span class="text-gray-500" data-v-ccc08f1c> — ${ssrInterpolate(area.description)}</span></div></li>`);
+        });
+        _push(`<!--]--></ul></div>`);
+        if (hasSaved.value) {
+          _push(`<div class="space-y-3" data-v-ccc08f1c><button class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl" data-v-ccc08f1c> Continuar evaluación <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" data-v-ccc08f1c></path></svg></button><button class="w-full text-sm text-gray-500 hover:text-primary-700 transition-colors py-2" data-v-ccc08f1c> Empezar de nuevo </button><p class="text-xs text-gray-400" data-v-ccc08f1c>Tenés una evaluación sin terminar guardada en este dispositivo.</p></div>`);
+        } else {
+          _push(`<button class="inline-flex items-center gap-2 px-10 py-4 bg-primary-600 text-white font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl" data-v-ccc08f1c> Comenzar evaluación <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" data-v-ccc08f1c></path></svg></button>`);
+        }
+        _push(`<p class="text-xs text-gray-500 mt-6" data-v-ccc08f1c> Sin costo. Los datos de contacto se solicitan únicamente al final, para enviarte el informe. </p></div></div>`);
+      } else if (step.value === "questions") {
+        _push(`<div data-v-ccc08f1c><div class="mb-8" data-v-ccc08f1c><div class="flex items-center justify-between mb-3" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.18em] text-primary-700" data-v-ccc08f1c>${ssrInterpolate(currentArea.value.name)}</p><p class="text-xs text-gray-500" aria-live="polite" data-v-ccc08f1c> Indicador ${ssrInterpolate(indicatorIndex.value)} de ${ssrInterpolate(currentArea.value.questions.length)}</p></div><div class="grid grid-cols-4 gap-2" role="progressbar"${ssrRenderAttr("aria-valuenow", progress.value + 1)}${ssrRenderAttr("aria-valuemin", 1)}${ssrRenderAttr("aria-valuemax", questions.value.length)} aria-label="Avance de la evaluación" data-v-ccc08f1c><!--[-->`);
+        ssrRenderList(areas, (area, ai) => {
+          _push(`<div class="${ssrRenderClass(["h-1.5 rounded-full transition-colors duration-300", areaSegments.value[ai].done ? "bg-primary-600" : areaSegments.value[ai].active ? "bg-primary-400" : "bg-gray-200"])}" data-v-ccc08f1c></div>`);
+        });
+        _push(`<!--]--></div></div><div class="bg-white border border-gray-100 rounded-2xl p-8 md:p-12 max-w-2xl mx-auto shadow-sm" data-v-ccc08f1c><h3 class="text-xl md:text-2xl font-heading font-semibold text-gray-900 text-center mb-8 leading-snug" data-v-ccc08f1c>${ssrInterpolate(currentQuestion.value.q)}</h3><div class="bg-gray-100 rounded-xl p-1.5 grid grid-cols-2 gap-1.5" role="group" aria-label="Respuesta" data-v-ccc08f1c><button type="button"${ssrRenderAttr("aria-pressed", answers[progress.value] === true)} class="${ssrRenderClass([
+          "py-4 rounded-lg font-heading font-semibold text-base transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2",
+          answers[progress.value] === true ? "bg-primary-600 text-white shadow-sm" : "bg-white text-gray-700 hover:text-primary-700 hover:bg-white/80"
+        ])}" data-v-ccc08f1c> Sí </button><button type="button"${ssrRenderAttr("aria-pressed", answers[progress.value] === false)} class="${ssrRenderClass([
+          "py-4 rounded-lg font-heading font-semibold text-base transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2",
+          answers[progress.value] === false ? "bg-primary-700 text-white shadow-sm" : "bg-white text-gray-700 hover:text-primary-700 hover:bg-white/80"
+        ])}" data-v-ccc08f1c> No </button></div></div><div class="flex items-center justify-between mt-6 max-w-2xl mx-auto" data-v-ccc08f1c>`);
+        if (progress.value > 0) {
+          _push(`<button class="text-sm text-gray-500 hover:text-primary-700 transition-colors" data-v-ccc08f1c> ← Anterior </button>`);
+        } else {
+          _push(`<span class="text-sm text-transparent select-none" data-v-ccc08f1c>← Anterior</span>`);
+        }
+        _push(`<span class="hidden sm:inline text-xs text-gray-400" data-v-ccc08f1c>Atajos: 1 = Sí · 2 = No · ← volver</span></div></div>`);
+      } else if (step.value === "results") {
+        _push(`<div class="report print-report" data-v-ccc08f1c><div class="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden" data-v-ccc08f1c><div class="border-b border-gray-100 px-6 md:px-10 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" data-v-ccc08f1c><img${ssrRenderAttr("src", _imports_0)} alt="ASYTEC Sistemas" class="h-8 w-auto" data-v-ccc08f1c><div class="text-left sm:text-right" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.18em] text-primary-600" data-v-ccc08f1c>Informe de diagnóstico</p><p class="text-xs text-gray-500 mt-1" data-v-ccc08f1c>${ssrInterpolate(user.company || "Organización")} · ${ssrInterpolate(unref(today))}</p></div></div><div class="px-6 md:px-10 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-100" data-v-ccc08f1c><div class="flex justify-center" data-v-ccc08f1c><div class="relative w-40 h-40" data-v-ccc08f1c><svg viewBox="0 0 120 120" class="w-full h-full -rotate-90" data-v-ccc08f1c><circle cx="60" cy="60" r="52" fill="none" stroke="#e6f0fa" stroke-width="10" data-v-ccc08f1c></circle><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" class="text-primary-600 transition-all duration-700"${ssrRenderAttr("stroke-dasharray", ringDash.value)} data-v-ccc08f1c></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center" data-v-ccc08f1c><span class="font-heading font-extrabold text-3xl text-gray-900" data-v-ccc08f1c>${ssrInterpolate(totalScore.value)}</span><span class="text-xs text-gray-500" data-v-ccc08f1c>de ${ssrInterpolate(questions.value.length)}</span></div></div></div><div class="md:col-span-2 text-center md:text-left" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.18em] text-gray-400 mb-2" data-v-ccc08f1c>Nivel de madurez</p><p class="font-heading font-bold text-2xl text-primary-700 mb-2" data-v-ccc08f1c>${ssrInterpolate(globalLevel.value.label)}</p><p class="text-gray-600 leading-relaxed" data-v-ccc08f1c>${ssrInterpolate(globalLevel.value.profile)}</p></div></div><div class="px-6 md:px-10 py-8 border-b border-gray-100" data-v-ccc08f1c><h3 class="font-heading font-bold text-base text-gray-900 mb-6" data-v-ccc08f1c>Resultado por dimensión</h3><div class="space-y-5" data-v-ccc08f1c><!--[-->`);
+        ssrRenderList(areas, (area, ai) => {
+          _push(`<div data-v-ccc08f1c><div class="flex items-center justify-between mb-2" data-v-ccc08f1c><div class="flex items-center gap-2.5" data-v-ccc08f1c><span class="${ssrRenderClass(["w-2 h-2 rounded-full", levelDot(area.score)])}" data-v-ccc08f1c></span><span class="font-medium text-gray-800 text-sm" data-v-ccc08f1c>${ssrInterpolate(area.name)}</span></div><span class="text-xs text-gray-500" data-v-ccc08f1c>${ssrInterpolate(area.score)}/${ssrInterpolate(area.questions.length)} · ${ssrInterpolate(levelLabel(area.score))}</span></div><div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden" data-v-ccc08f1c><div class="${ssrRenderClass([levelBg(area.score), "h-1.5 rounded-full transition-all duration-700"])}" style="${ssrRenderStyle(`width: ${area.score / area.questions.length * 100}%`)}" data-v-ccc08f1c></div></div></div>`);
+        });
+        _push(`<!--]--></div></div><div class="px-6 md:px-10 py-8 space-y-8" data-v-ccc08f1c><div data-v-ccc08f1c><h3 class="font-heading font-bold text-base text-gray-900 mb-3" data-v-ccc08f1c>Resumen ejecutivo</h3><p class="text-gray-700 leading-relaxed" data-v-ccc08f1c>${ssrInterpolate(resumenEjecutivo.value)}</p></div>`);
+        if (oportunidades.value.length) {
+          _push(`<div data-v-ccc08f1c><h3 class="font-heading font-bold text-base text-gray-900 mb-4" data-v-ccc08f1c>Hallazgos priorizados</h3><ul class="space-y-4" data-v-ccc08f1c><!--[-->`);
+          ssrRenderList(oportunidades.value, (op, i) => {
+            _push(`<li class="flex gap-4" data-v-ccc08f1c><span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-50 text-primary-700 text-xs font-bold flex items-center justify-center mt-0.5" data-v-ccc08f1c>${ssrInterpolate(i + 1)}</span><span class="text-gray-700 leading-relaxed text-sm md:text-base" data-v-ccc08f1c>${ssrInterpolate(op)}</span></li>`);
+          });
+          _push(`<!--]--></ul></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<div class="bg-primary-50 border border-primary-100 rounded-xl p-6" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.18em] text-primary-700 mb-2" data-v-ccc08f1c>Próximo paso</p><p class="text-gray-800 leading-relaxed" data-v-ccc08f1c>${ssrInterpolate(proximoPaso.value)}</p></div></div><div class="px-6 md:px-10 pb-8" data-v-ccc08f1c><h3 class="font-heading font-bold text-base text-gray-900 mb-3" data-v-ccc08f1c>Detalle por dimensión</h3><div class="divide-y divide-gray-100 border-t border-gray-100" data-v-ccc08f1c><!--[-->`);
+        ssrRenderList(areas, (area, ai) => {
+          _push(`<div data-v-ccc08f1c><button class="w-full flex items-center justify-between gap-4 py-4 text-left"${ssrRenderAttr("aria-expanded", openArea.value === ai)} data-v-ccc08f1c><span class="flex items-center gap-2.5" data-v-ccc08f1c><span class="${ssrRenderClass(["w-2 h-2 rounded-full", levelDot(area.score)])}" data-v-ccc08f1c></span><span class="font-medium text-gray-800 text-sm" data-v-ccc08f1c>${ssrInterpolate(area.name)}</span></span><span class="flex items-center gap-3" data-v-ccc08f1c><span class="text-xs text-gray-500" data-v-ccc08f1c>${ssrInterpolate(area.score)}/${ssrInterpolate(area.questions.length)}</span><svg class="${ssrRenderClass(["w-4 h-4 text-gray-400 transition-transform duration-200", openArea.value === ai && "rotate-180"])}" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" data-v-ccc08f1c></path></svg></span></button>`);
+          if (openArea.value === ai) {
+            _push(`<div class="pb-4 pl-4.5 space-y-2" data-v-ccc08f1c><p class="text-xs text-gray-500 mb-2" data-v-ccc08f1c>${ssrInterpolate(area.description)}</p><ul class="space-y-2" data-v-ccc08f1c><!--[-->`);
+            ssrRenderList(area.questions, (q, qi) => {
+              _push(`<li class="flex items-start gap-2.5 text-sm" data-v-ccc08f1c><span class="${ssrRenderClass(["mt-0.5 w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0", isYes(ai, qi) ? "bg-primary-100 text-primary-700" : "bg-red-50 text-red-500"])}" data-v-ccc08f1c>`);
+              if (isYes(ai, qi)) {
+                _push(`<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-v-ccc08f1c></path></svg>`);
+              } else {
+                _push(`<svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" data-v-ccc08f1c></path></svg>`);
+              }
+              _push(`</span><span class="text-gray-600" data-v-ccc08f1c>${ssrInterpolate(q.q)}</span></li>`);
+            });
+            _push(`<!--]--></ul></div>`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`</div>`);
+        });
+        _push(`<!--]--></div></div><div class="border-t border-gray-100 px-6 md:px-10 py-5 flex items-center justify-between gap-4" data-v-ccc08f1c><p class="text-[11px] text-gray-400 leading-relaxed max-w-md" data-v-ccc08f1c> Informe generado a partir de ${ssrInterpolate(questions.value.length)} indicadores. Es un punto de partida, no una auditoría técnica. </p><img${ssrRenderAttr("src", _imports_1)} alt="ASYTEC" class="h-6 w-auto opacity-60" data-v-ccc08f1c></div></div><div class="no-print flex flex-col sm:flex-row gap-3 justify-center mt-8" data-v-ccc08f1c><button class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary-600 text-white font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-lg" data-v-ccc08f1c> Descargar informe (PDF) <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M4 6h16M4 6a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2" data-v-ccc08f1c></path></svg></button><button class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white border border-gray-200 text-gray-700 font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:border-primary-600 hover:text-primary-700" data-v-ccc08f1c> Recibir por mail <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" data-v-ccc08f1c></path></svg></button><button class="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-gray-500 text-sm transition-colors hover:text-primary-700" data-v-ccc08f1c> Borrar mis datos </button></div></div>`);
+      } else if (step.value === "send") {
+        _push(`<div data-v-ccc08f1c>`);
+        if (emailStatus.value === "ok") {
+          _push(`<div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-10 max-w-xl mx-auto text-center" data-v-ccc08f1c><span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-50 text-primary-600 mb-5" data-v-ccc08f1c><svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" data-v-ccc08f1c><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" data-v-ccc08f1c></path></svg></span><h3 class="font-heading font-bold text-xl text-gray-900 mb-2" data-v-ccc08f1c>Informe enviado</h3><p class="text-gray-600 text-sm leading-relaxed mb-6" data-v-ccc08f1c> Te enviamos el informe a <strong data-v-ccc08f1c>${ssrInterpolate(user.email)}</strong>. Revisá tu bandeja de entrada o la carpeta de spam. </p><button class="text-sm text-primary-700 hover:text-primary-800 font-medium" data-v-ccc08f1c> ← Volver al informe </button></div>`);
+        } else {
+          _push(`<div data-v-ccc08f1c><div class="text-center mb-10" data-v-ccc08f1c><p class="text-xs font-heading font-bold uppercase tracking-[0.2em] text-primary-600 mb-3" data-v-ccc08f1c>Último paso</p><h2 class="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3" data-v-ccc08f1c>Recibir el informe completo</h2><p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base leading-relaxed" data-v-ccc08f1c> Enviamos el informe con el detalle por dimensión y el próximo paso recomendado. </p></div><form class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 max-w-xl mx-auto space-y-4" data-v-ccc08f1c><div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-v-ccc08f1c><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Nombre *</label><input${ssrRenderAttr("value", user.name)} type="text" required placeholder="Tu nombre" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c></div><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Email corporativo *</label><input${ssrRenderAttr("value", user.email)} type="email" required placeholder="tu@empresa.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-v-ccc08f1c><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Empresa *</label><input${ssrRenderAttr("value", user.company)} type="text" required placeholder="Nombre de tu empresa" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c></div><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Cargo</label><input${ssrRenderAttr("value", user.role)} type="text" placeholder="Ej: Gerente de Operaciones" class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-v-ccc08f1c><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Área evaluada</label><select class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c><option value="" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "") : ssrLooseEqual(user.area, "")) ? " selected" : ""}>Opcional</option><option value="Toda la empresa" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Toda la empresa") : ssrLooseEqual(user.area, "Toda la empresa")) ? " selected" : ""}>Toda la empresa</option><option value="Atención al Cliente" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Atención al Cliente") : ssrLooseEqual(user.area, "Atención al Cliente")) ? " selected" : ""}>Atención al Cliente</option><option value="Finanzas" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Finanzas") : ssrLooseEqual(user.area, "Finanzas")) ? " selected" : ""}>Finanzas</option><option value="Legal" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Legal") : ssrLooseEqual(user.area, "Legal")) ? " selected" : ""}>Legal</option><option value="Marketing" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Marketing") : ssrLooseEqual(user.area, "Marketing")) ? " selected" : ""}>Marketing</option><option value="Operaciones" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Operaciones") : ssrLooseEqual(user.area, "Operaciones")) ? " selected" : ""}>Operaciones</option><option value="Recursos Humanos" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Recursos Humanos") : ssrLooseEqual(user.area, "Recursos Humanos")) ? " selected" : ""}>Recursos Humanos</option><option value="Tecnología" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Tecnología") : ssrLooseEqual(user.area, "Tecnología")) ? " selected" : ""}>Tecnología</option><option value="Ventas" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Ventas") : ssrLooseEqual(user.area, "Ventas")) ? " selected" : ""}>Ventas</option><option value="Otra" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.area) ? ssrLooseContain(user.area, "Otra") : ssrLooseEqual(user.area, "Otra")) ? " selected" : ""}>Otra</option></select></div><div data-v-ccc08f1c><label class="block text-xs font-heading font-semibold uppercase tracking-wider text-gray-500 mb-1.5" data-v-ccc08f1c>Tamaño</label><select class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 text-sm transition-all duration-200 outline-none focus:bg-white focus:ring-2 focus:ring-primary-400 focus:border-transparent" data-v-ccc08f1c><option value="" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.size) ? ssrLooseContain(user.size, "") : ssrLooseEqual(user.size, "")) ? " selected" : ""}>Opcional</option><option value="1-10" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.size) ? ssrLooseContain(user.size, "1-10") : ssrLooseEqual(user.size, "1-10")) ? " selected" : ""}>1 a 10 personas</option><option value="11-50" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.size) ? ssrLooseContain(user.size, "11-50") : ssrLooseEqual(user.size, "11-50")) ? " selected" : ""}>11 a 50 personas</option><option value="51-200" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.size) ? ssrLooseContain(user.size, "51-200") : ssrLooseEqual(user.size, "51-200")) ? " selected" : ""}>51 a 200 personas</option><option value="201+" data-v-ccc08f1c${ssrIncludeBooleanAttr(Array.isArray(user.size) ? ssrLooseContain(user.size, "201+") : ssrLooseEqual(user.size, "201+")) ? " selected" : ""}>Más de 200 personas</option></select></div></div><label class="flex items-start gap-3 text-xs text-gray-600 pt-2 cursor-pointer" data-v-ccc08f1c><input${ssrIncludeBooleanAttr(Array.isArray(user.consent) ? ssrLooseContain(user.consent, null) : user.consent) ? " checked" : ""} type="checkbox" required class="mt-0.5 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500" data-v-ccc08f1c><span data-v-ccc08f1c>Acepto recibir el informe y comunicaciones relacionadas. Podés darte de baja cuando quieras.</span></label><button type="submit"${ssrIncludeBooleanAttr(sending.value) ? " disabled" : ""} class="w-full mt-2 inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 text-white font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-lg disabled:opacity-60" data-v-ccc08f1c>`);
+          if (!sending.value) {
+            _push(`<span data-v-ccc08f1c>Enviar informe</span>`);
+          } else {
+            _push(`<span class="flex items-center gap-2" data-v-ccc08f1c><svg class="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none" data-v-ccc08f1c><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" data-v-ccc08f1c></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" data-v-ccc08f1c></path></svg> Enviando... </span>`);
+          }
+          _push(`</button>`);
+          if (emailStatus.value === "error") {
+            _push(`<p class="text-red-600 text-xs text-center" data-v-ccc08f1c> No pudimos enviar el informe. Escribinos a info@asytec.com. </p>`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`<button type="button" class="w-full text-sm text-gray-500 hover:text-primary-700 transition-colors py-2" data-v-ccc08f1c> ← Volver al informe </button></form></div>`);
+        }
+        _push(`</div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></section>`);
+    };
+  }
+};
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/sections/TestSection.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-ccc08f1c"]]);
+const useStateKeyPrefix = "$s";
+function useState(...args) {
+  const autoKey = typeof args[args.length - 1] === "string" ? args.pop() : void 0;
+  if (typeof args[0] !== "string") {
+    args.unshift(autoKey);
+  }
+  const [_key, init] = args;
+  if (!_key || typeof _key !== "string") {
+    throw new TypeError("[nuxt] [useState] key must be a string: " + _key);
+  }
+  if (init !== void 0 && typeof init !== "function") {
+    throw new Error("[nuxt] [useState] init must be a function: " + init);
+  }
+  const key = useStateKeyPrefix + _key;
+  const nuxtApp = useNuxtApp();
+  const state = toRef(nuxtApp.payload.state, key);
+  if (state.value === void 0 && init) {
+    const initialValue = init();
+    if (isRef(initialValue)) {
+      nuxtApp.payload.state[key] = initialValue;
+      return initialValue;
+    }
+    state.value = initialValue;
+  }
+  return state;
+}
+const useDiagnosticoModal = () => {
+  const isOpen = useState("diagnostico-modal-open", () => false);
+  const open = () => {
+    isOpen.value = true;
+  };
+  const close = () => {
+    isOpen.value = false;
+  };
+  const toggle = () => {
+    isOpen.value = !isOpen.value;
+  };
+  return { isOpen, open, close, toggle };
+};
+const _sfc_main$3 = {
+  __name: "DiagnosticoModal",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const { isOpen } = useDiagnosticoModal();
+    ref(null);
+    const closeBtn = ref(null);
+    let previousActive = null;
+    watch(isOpen, async (open) => {
+      if (open) {
+        previousActive = (void 0).activeElement;
+        await nextTick();
+        closeBtn.value?.focus();
+      } else if (previousActive && typeof previousActive.focus === "function") {
+        previousActive.focus();
+        previousActive = null;
+      }
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_TestSection = __nuxt_component_0;
+      ssrRenderTeleport(_push, (_push2) => {
+        if (unref(isOpen)) {
+          _push2(`<div class="diagnostico-modal fixed inset-0 z-[100] flex items-stretch md:items-center justify-center md:p-6" role="dialog" aria-modal="true" aria-labelledby="diag-modal-title" data-v-0a4c7022><div class="diagnostico-modal-backdrop absolute inset-0 bg-gray-900/60 backdrop-blur-sm" data-v-0a4c7022></div><div tabindex="-1" class="diagnostico-modal-panel relative w-full max-w-5xl max-h-[100dvh] md:max-h-[90vh] overflow-y-auto bg-gray-50 md:rounded-2xl shadow-2xl outline-none" data-v-0a4c7022><div class="diagnostico-modal-header sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-gray-100 px-4 md:px-8 py-3.5 flex items-center justify-between gap-4" data-v-0a4c7022><div class="flex items-center gap-3 min-w-0" data-v-0a4c7022><img${ssrRenderAttr("src", _imports_0)} alt="ASYTEC Sistemas" class="h-7 w-auto flex-shrink-0" data-v-0a4c7022><span id="diag-modal-title" class="text-sm font-heading font-semibold text-gray-700 truncate" data-v-0a4c7022> Diagnóstico de adopción de IA </span></div><button type="button" class="diagnostico-modal-close flex-shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500" aria-label="Cerrar diagnóstico" data-v-0a4c7022><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" data-v-0a4c7022><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" data-v-0a4c7022></path></svg></button></div>`);
+          _push2(ssrRenderComponent(_component_TestSection, { embedded: "" }, null, _parent));
+          _push2(`</div></div>`);
+        } else {
+          _push2(`<!---->`);
+        }
+      }, "body", false, _parent);
+    };
+  }
+};
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/sections/DiagnosticoModal.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-0a4c7022"]]);
 const _sfc_main$2 = {
   __name: "app",
   __ssrInlineRender: true,
@@ -926,9 +1275,11 @@ const _sfc_main$2 = {
       }, 200);
     }, { immediate: true });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtPage = __nuxt_component_0;
+      const _component_NuxtPage = __nuxt_component_0$1;
+      const _component_DiagnosticoModal = __nuxt_component_1;
       _push(`<div${ssrRenderAttrs(_attrs)}>`);
       _push(ssrRenderComponent(_component_NuxtPage, null, null, _parent));
+      _push(ssrRenderComponent(_component_DiagnosticoModal, null, null, _parent));
       _push(`</div>`);
     };
   }
@@ -953,8 +1304,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-DSEEjJvz.js"));
-    const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-DEG8syVL.js"));
+    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-hhIpNtg4.js"));
+    const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-D5SuGPeX.js"));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -1046,12 +1397,15 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 export {
+  _export_sfc as _,
   useRuntimeConfig as a,
   useRequestEvent as b,
-  useRouter as c,
-  nuxtLinkDefaults as d,
+  useDiagnosticoModal as c,
+  _imports_0 as d,
   entry_default as default,
-  encodeRoutePath as e,
+  useRouter as e,
+  encodeRoutePath as f,
+  nuxtLinkDefaults as g,
   navigateTo as n,
   resolveRouteObject as r,
   tryUseNuxtApp as t,

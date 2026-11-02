@@ -5,17 +5,25 @@
         <h2 class="section-title">Diagnóstico IA</h2>
         <div class="w-16 h-1 bg-primary-500 mx-auto mt-4 rounded-full reveal-bar" />
         <p class="section-subtitle max-w-2xl mx-auto mt-5 reveal-sub">
-          Evaluá la madurez tecnológica de tu empresa en 5 minutos. 17 preguntas, 5 áreas clave.
+          Evaluación de madurez en IA: 12 indicadores y 4 dimensiones. Al finalizar recibís un informe con
+          hallazgos priorizados y un próximo paso concreto.
         </p>
-        <div class="mt-10 reveal-sub">
-          <NuxtLink
-            to="/diagnostico"
+        <div class="mt-10 reveal-sub flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button
+            type="button"
+            @click="open"
             class="inline-flex items-center gap-2 px-10 py-4 bg-primary-600 text-white font-heading font-bold text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-primary-700 hover:shadow-xl hover:-translate-y-0.5"
           >
-            Empezar diagnóstico
+            Comenzar evaluación
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
+          </button>
+          <NuxtLink
+            to="/diagnostico"
+            class="inline-flex items-center gap-2 px-6 py-4 text-sm font-heading font-semibold uppercase tracking-wider text-primary-700 transition-colors hover:text-primary-800"
+          >
+            Ver metodología
           </NuxtLink>
         </div>
       </div>
@@ -31,6 +39,8 @@ const headerRef = ref(null)
 useIntersectionObserver(headerRef, ([{ isIntersecting }]) => {
   if (isIntersecting) headerRef.value?.classList.add('visible')
 })
+
+const { open } = useDiagnosticoModal()
 </script>
 
 <style scoped>

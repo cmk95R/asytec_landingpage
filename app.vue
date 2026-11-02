@@ -1,6 +1,7 @@
 <template>
   <div>
     <NuxtPage />
+    <DiagnosticoModal />
   </div>
 </template>
 

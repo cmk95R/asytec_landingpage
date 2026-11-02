@@ -1,0 +1,1 @@
+import{af as s,ag as u,ah as r,ai as o,aj as i,ak as c}from"./HYQDBuht.js";function n(t){const e=t||u();return e?.ssrContext?.head||e?.runWithContext(()=>{if(r())return o(i)})}function x(t,e={}){const a=n(e.nuxt);if(a)return c(t,{head:a,...e})}function d(t,e={}){const a=n(e.nuxt);if(a)return s(t,{head:a,...e})}export{d as a,x as u};

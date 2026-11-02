@@ -115,6 +115,39 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+/* Impresión del informe */
+@media print {
+  header, footer, .no-print { display: none !important; }
+  body { background: #ffffff !important; }
+  main { display: block !important; }
+  section { padding-top: 0 !important; padding-bottom: 0 !important; background: #ffffff !important; }
+  .print-report .bg-gray-50, .print-report .bg-primary-50 { background: #ffffff !important; }
+  .print-report { border: 0 !important; box-shadow: none !important; }
+  .print-report > div { border: 1px solid #e5e7eb !important; break-inside: avoid; }
+
+  body.diag-modal-open main { display: none !important; }
+  body.diag-modal-open .diagnostico-modal {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+  body.diag-modal-open .diagnostico-modal-backdrop,
+  body.diag-modal-open .diagnostico-modal-header { display: none !important; }
+  body.diag-modal-open .diagnostico-modal-panel {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+  }
+
+  @page { margin: 16mm; }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f3f6fb"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A66C2"/>
+      <stop offset="100%" stop-color="#084d92"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.15"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bg)"/>
+
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="70" fill="#ffffff"/>
+  <line x1="0" y1="70" x2="800" y2="70" stroke="#e6e9ef" stroke-width="1"/>
+  <text x="40" y="45" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="700" fill="#0A66C2">ASYTEC Sistemas</text>
+  <text x="40" y="63" font-family="Open Sans, Arial, sans-serif" font-size="12" fill="#666">8.873 seguidores</text>
+
+  <!-- Avatar -->
+  <circle cx="745" cy="35" r="18" fill="#0A66C2"/>
+  <text x="745" y="42" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+
+  <!-- Author block -->
+  <circle cx="55" cy="135" r="28" fill="#0A66C2"/>
+  <text x="55" y="142" font-family="Montserrat, Arial, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+  <text x="100" y="125" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="700" fill="#000">ASYTEC Sistemas</text>
+  <text x="100" y="148" font-family="Open Sans, Arial, sans-serif" font-size="13" fill="#666">8.873 seguidores</text>
+  <text x="100" y="166" font-family="Open Sans, Arial, sans-serif" font-size="12" fill="#999">4d · Editado · 🌐</text>
+
+  <!-- Body text -->
+  <g font-family="Open Sans, Arial, sans-serif" font-size="15" fill="#222">
+    <text x="40" y="220" font-weight="700">💡 Nueva sección | La mirada del equipo</text>
+    <text x="40" y="250">En ASYTEC Sistemas creemos que las mejores conversaciones nacen</text>
+    <text x="40" y="272">de la experiencia. Por eso, inauguramos este espacio para compartir</text>
+    <text x="40" y="294">aprendizajes, recorridos y reflexiones de quienes forman parte</text>
+    <text x="40" y="316">de nuestro equipo. 🚀</text>
+
+    <text x="40" y="358">En esta oportunidad, conversamos con <tspan font-weight="700" fill="#0A66C2">Gonzalo Almeida</tspan></text>
+    <text x="40" y="380">sobre un tema cada vez más presente en la industria: la</text>
+    <text x="40" y="402">inteligencia artificial. 🤖</text>
+
+    <text x="40" y="444">Gonzalo es Analista de Ciberseguridad SSr y forma parte activa</text>
+    <text x="40" y="466">en un equipo de respuesta a incidentes (IRT). Además, incorpora</text>
+    <text x="40" y="488">herramientas y agentes AI para mejorar el análisis y automatizar</text>
+    <text x="40" y="510">pruebas técnicas. 💻</text>
+  </g>
+
+  <!-- Image placeholder -->
+  <rect x="40" y="560" width="720" height="280" rx="12" fill="#e3eaf3"/>
+  <text x="400" y="710" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="700" fill="#0A66C2" text-anchor="middle">Foto del post en LinkedIn</text>
+
+  <!-- Reactions -->
+  <g transform="translate(40, 870)">
+    <circle cx="15" cy="15" r="13" fill="#0A66C2"/>
+    <circle cx="35" cy="15" r="13" fill="#f5b800"/>
+    <circle cx="55" cy="15" r="13" fill="#e06847"/>
+    <text x="80" y="20" font-family="Open Sans, Arial, sans-serif" font-size="13" fill="#666">10 reacciones</text>
+    <text x="220" y="20" font-family="Open Sans, Arial, sans-serif" font-size="13" fill="#666">1 comentario</text>
+  </g>
+
+  <!-- Action bar -->
+  <line x1="0" y1="915" x2="800" y2="915" stroke="#e6e9ef" stroke-width="1"/>
+  <g font-family="Open Sans, Arial, sans-serif" font-size="14" fill="#666">
+    <text x="120" y="960" text-anchor="middle">👍 Me gusta</text>
+    <text x="320" y="960" text-anchor="middle">💬 Comentar</text>
+    <text x="520" y="960" text-anchor="middle">↗ Compartir</text>
+    <text x="700" y="960" text-anchor="middle">Enviar</text>
+  </g>
+</svg>

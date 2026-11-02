@@ -20,6 +20,7 @@ interface _GlobalComponents {
   BenefitsSection: typeof import("../../components/sections/BenefitsSection.vue")['default']
   ClientLogos: typeof import("../../components/sections/ClientLogos.vue")['default']
   ContactSection: typeof import("../../components/sections/ContactSection.vue")['default']
+  DiagnosticoModal: typeof import("../../components/sections/DiagnosticoModal.vue")['default']
   DiagnosticoTeaser: typeof import("../../components/sections/DiagnosticoTeaser.vue")['default']
   HeroCarousel: typeof import("../../components/sections/HeroCarousel.vue")['default']
   JobsSection: typeof import("../../components/sections/JobsSection.vue")['default']
@@ -56,6 +57,7 @@ interface _GlobalComponents {
   LazyBenefitsSection: LazyComponent<typeof import("../../components/sections/BenefitsSection.vue")['default']>
   LazyClientLogos: LazyComponent<typeof import("../../components/sections/ClientLogos.vue")['default']>
   LazyContactSection: LazyComponent<typeof import("../../components/sections/ContactSection.vue")['default']>
+  LazyDiagnosticoModal: LazyComponent<typeof import("../../components/sections/DiagnosticoModal.vue")['default']>
   LazyDiagnosticoTeaser: LazyComponent<typeof import("../../components/sections/DiagnosticoTeaser.vue")['default']>
   LazyHeroCarousel: LazyComponent<typeof import("../../components/sections/HeroCarousel.vue")['default']>
   LazyJobsSection: LazyComponent<typeof import("../../components/sections/JobsSection.vue")['default']>
